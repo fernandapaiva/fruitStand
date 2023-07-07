@@ -10,6 +10,7 @@ MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.182.0] /home/fernanda/
 MERGED from [com.facebook.flipper:flipper:0.182.0] /home/fernanda/.gradle/caches/transforms-3/e13f88164840fe641a466d05cd8edac7/transformed/jetified-flipper-0.182.0/AndroidManifest.xml:8:1-18:12
 MERGED from [:react-native-safe-area-context] /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-screens] /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:react-native-svg] /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.react:react-android:0.72.1] /home/fernanda/.gradle/caches/transforms-3/03dccab32998b7f1f4d6aa70c3dc2129/transformed/jetified-react-android-0.72.1-debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.react:hermes-android:0.72.1] /home/fernanda/.gradle/caches/transforms-3/044738e17ac43254a53bfd053c4eb51b/transformed/jetified-hermes-android-0.72.1-debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.5.0] /home/fernanda/.gradle/caches/transforms-3/463b085172aadec89519c358dac4e9e6/transformed/jetified-imagepipeline-okhttp3-2.5.0/AndroidManifest.xml:2:1-9:12
@@ -177,6 +178,8 @@ MERGED from [:react-native-safe-area-context] /home/fernanda/Documentos/React Na
 MERGED from [:react-native-safe-area-context] /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-screens] /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:react-native-screens] /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-svg] /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:react-native-svg] /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.72.1] /home/fernanda/.gradle/caches/transforms-3/03dccab32998b7f1f4d6aa70c3dc2129/transformed/jetified-react-android-0.72.1-debug/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:react-android:0.72.1] /home/fernanda/.gradle/caches/transforms-3/03dccab32998b7f1f4d6aa70c3dc2129/transformed/jetified-react-android-0.72.1-debug/AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.react:hermes-android:0.72.1] /home/fernanda/.gradle/caches/transforms-3/044738e17ac43254a53bfd053c4eb51b/transformed/jetified-hermes-android-0.72.1-debug/AndroidManifest.xml:5:5-44
