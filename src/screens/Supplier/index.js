@@ -1,11 +1,73 @@
+// import React from "react";
+// import { Container, TitleRegistration} from "./styles";
+// import RedButton from "../../components/RedButton";
+
+// export default function Supplier (){
+//     return(
+//         <Container>
+//             <TitleRegistration>Cadastre seu primeiro fornecedor</TitleRegistration>
+//             <RedButton />
+//         </Container>
+//     )
+// }
+
+
+///////////////////////////////////////
+
 import React from "react";
-import { Container } from "./styles";
-import RedButton from "../../components/RedButton";
+import {FlatList} from 'react-native';
+import {Container, InputSearch, ViewInput, ContainerImage, ContainerInformation, Sepator20 ,SepatorItens, Main, DataSupplier, LiningUp, NameSupplier, ButtonAdd} from "./styles";
+import Search from "../../assets/Search";
+import Person from "../../assets/Person";
+import Call from "../../assets/Call";
+import Add from "../../assets/Add";
+
+const DATA = [
+  {
+    fornecedor: "Lorem ipsum",
+    cpf: "000.000.000-00",
+    telefone: "(00) 0000-0000",
+  },
+]
 
 export default function Supplier (){
     return(
         <Container>
-            <RedButton />
+            <Main>
+            <ViewInput>
+            <ContainerImage>
+                <Search />
+            </ContainerImage>
+            <InputSearch 
+            placeholder="Pesquisar Fornecedor"
+            placeholderTextColor="#363A3C"
+            />
+            </ViewInput>
+            <Sepator20 />
+            <FlatList 
+            data={DATA}
+            renderItem={({item}) => (
+                <>
+                <ContainerInformation>
+                <NameSupplier>{item.fornecedor}</NameSupplier>
+                <LiningUp>
+                <Person />
+                <SepatorItens />
+                 <DataSupplier>{item.cpf}</DataSupplier>
+                </LiningUp>
+                <LiningUp>
+                <Call />
+                <SepatorItens />
+                <DataSupplier>{item.telefone}</DataSupplier>
+                </LiningUp>
+                </ContainerInformation>
+                </>
+            )}
+            />
+            </Main>
+            <ButtonAdd activeOpacity={0.7}>
+                <Add />
+            </ButtonAdd>
         </Container>
     )
 }

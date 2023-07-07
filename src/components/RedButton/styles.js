@@ -7,6 +7,11 @@ export const Button = styled.TouchableOpacity`
   border-radius: 100px;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+`;
+
+export const SepatorItem = styled.View`
+  width: 10px;
 `;
 
 export const TitleButton = styled.Text`
