@@ -1,73 +1,85 @@
-// import React from "react";
-// import { Container, TitleRegistration} from "./styles";
-// import RedButton from "../../components/RedButton";
-
-// export default function Supplier (){
-//     return(
-//         <Container>
-//             <TitleRegistration>Cadastre seu primeiro fornecedor</TitleRegistration>
-//             <RedButton />
-//         </Container>
-//     )
-// }
-
-
-///////////////////////////////////////
-
 import React from "react";
-import {FlatList} from 'react-native';
-import {Container, InputSearch, ViewInput, ContainerImage, ContainerInformation, Sepator20 ,SepatorItens, Main, DataSupplier, LiningUp, NameSupplier, ButtonAdd} from "./styles";
-import Search from "../../assets/Search";
-import Person from "../../assets/Person";
-import Call from "../../assets/Call";
-import Add from "../../assets/Add";
+import { FlatList } from "react-native";
+import {
+  Container,
+  FirstView,
+  PageTitle,
+  NameFruit,
+  SubContainer,
+  TextAbove,
+  TextInformation,
+  AlignContainer,
+  ColumView,
+  TextData,
+  Sepator15,
+  TitleRegistration,
+  Content,
+} from "./styles";
+import Close from "../../assets/images/Close";
+import Person from "../../assets/images/Person";
+import { SepatorItem } from "../../components/RedButton/styles";
+import RedButton from "../../components/RedButton";
+import Call from "../../assets/images/Call";
 
-const DATA = [
+const DataFruit = [
   {
-    fornecedor: "Lorem ipsum",
-    cpf: "000.000.000-00",
-    telefone: "(00) 0000-0000",
+    fruta1: "Banana",
+    fruta2: "Maça",
+    fruta3: "Laranja",
+    fruta4: "Abacaxi",
+    fruta5: "Morango",
+    fruta6: "Manda",
+    fruta7: "Uva",
+    fruta8: "Pera",
+    fruta9: "Kiwi",
+    fruta10: "Melancia",
   },
-]
+];
 
-export default function Supplier (){
-    return(
-        <Container>
-            <Main>
-            <ViewInput>
-            <ContainerImage>
-                <Search />
-            </ContainerImage>
-            <InputSearch 
-            placeholder="Pesquisar Fornecedor"
-            placeholderTextColor="#363A3C"
-            />
-            </ViewInput>
-            <Sepator20 />
-            <FlatList 
-            data={DATA}
-            renderItem={({item}) => (
-                <>
-                <ContainerInformation>
-                <NameSupplier>{item.fornecedor}</NameSupplier>
-                <LiningUp>
-                <Person />
-                <SepatorItens />
-                 <DataSupplier>{item.cpf}</DataSupplier>
-                </LiningUp>
-                <LiningUp>
-                <Call />
-                <SepatorItens />
-                <DataSupplier>{item.telefone}</DataSupplier>
-                </LiningUp>
-                </ContainerInformation>
-                </>
-            )}
-            />
-            </Main>
-            <ButtonAdd activeOpacity={0.7}>
-                <Add />
-            </ButtonAdd>
-        </Container>
-    )
+export default function Supplier() {
+  const renderSupplierDetails = () => (
+    <>
+      <FirstView>
+        <PageTitle>Fornecedor</PageTitle>
+        <Close />
+      </FirstView>
+      <ColumView>
+        <TextInformation>Lorem Ipsum</TextInformation>
+        <Sepator15 />
+        <AlignContainer>
+          <Person />
+          <SepatorItem />
+          <TextData>000.000.000-00</TextData>
+        </AlignContainer>
+        <Sepator15 />
+        <AlignContainer>
+          <Call />
+          <SepatorItem />
+          <TextData>(00) 00000-0000</TextData>
+        </AlignContainer>
+      </ColumView>
+      <FlatList
+        data={DataFruit}
+        renderItem={({ item }) => (
+          <SubContainer>
+            <TextAbove>Frutas</TextAbove>
+            <NameFruit>{item.fruta1}</NameFruit>
+          </SubContainer>
+        )}
+      />
+    </>
+  );
+
+  const renderEmptySupplier = () => (
+    <Content>
+      <TitleRegistration>Cadastre seu primeiro fornecedor</TitleRegistration>
+      <RedButton />
+    </Content>
+  );
+
+  return (
+    <Container>
+      {renderEmptySupplier()}
+    </Container>
+  );
 }

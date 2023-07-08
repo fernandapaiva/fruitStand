@@ -8,8 +8,11 @@ import Supplier from './screens/Supplier';
 import Fruits from './screens/Fruits';
 
 /// ICONS
-import People from './assets/People';
-import Nutrition from './assets/Nutrition';
+import People from './assets/images/People';
+import PeopleRed from './assets/images/PeopleRed';
+import Nutrition from './assets/images/Nutrition';
+import NutritionRed from './assets/images/NutritionRed';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -19,14 +22,15 @@ function BottomTab() {
         initialRouteName='Fornecedor'
         screenOptions={
             {headerShown: false,
-            tabBarStyle: {height: 80}
+            tabBarStyle: {height: 80, paddingBottom: 5}
             }
             }>
             <Tab.Screen 
             name='Fornecedor' 
             component={Supplier}
             options={{
-                tabBarIcon: ({focused}) => <People color={focused ? '#da0d1e' : '#383b3d'}/>
+                tabBarIcon: ({focused}) => focused ? <PeopleRed /> : <People />,
+                tabBarActiveTintColor: '#da0d1e',
             }}
             />
 
@@ -34,7 +38,8 @@ function BottomTab() {
             name='Frutas' 
             component={Fruits} 
             options={{
-                tabBarIcon: ({focused}) => <Nutrition color={focused ? '#da0d1e' : '#383b3d'}/>
+                tabBarIcon: ({focused}) =>  focused ? <NutritionRed /> : <Nutrition />,
+                tabBarActiveTintColor: '#da0d1e'
             }}
             />
 

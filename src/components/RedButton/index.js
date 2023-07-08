@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, TitleButton, SepatorItem} from "./styles";
-import Adding from "../../assets/Adding";
+import Adding from "../../assets/images/Adding";
 
 export default function RedButton (){
     return(
