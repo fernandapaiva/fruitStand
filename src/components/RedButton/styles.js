@@ -1,7 +1,10 @@
 import styled from "styled-components/native";
+import {Dimensions} from 'react-native';
+
+const {width} = Dimensions.get('window')
 
 export const Button = styled.TouchableOpacity`
-  width: 328px;
+  width: ${width - 30}px;
   height:40px;
   background-color: #da0d1e;
   border-radius: 100px;
@@ -17,4 +20,6 @@ export const SepatorItem = styled.View`
 export const TitleButton = styled.Text`
   font-size: 13px;
   color: #ffffff;
+  font-family: 'Poppins-Medium';
+  margin-top: 2px;
 `;

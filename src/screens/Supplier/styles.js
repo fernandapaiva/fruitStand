@@ -1,4 +1,7 @@
 import styled from "styled-components/native";
+import {Dimensions} from 'react-native';
+
+const {width} = Dimensions.get('window')
 
 export const Content = styled.View`
   flex: 1;
@@ -10,6 +13,10 @@ export const Content = styled.View`
 export const TitleRegistration = styled.Text`
   font-size: 16px;
   color: #212324;
+  align-self: flex-start;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  font-family: 'Poppins-Regular';
 `;
 
 export const Container = styled.View`
@@ -29,15 +36,18 @@ export const SeparatorItens = styled.View`
   width: 10px;
 `;
 
+export const Separator8 = styled.View`
+  height: 10px;
+`;
+
 export const Main = styled.View`
   align-items: center;
-  margin-top: 30px;
 `;
 
 
 export const ViewInput = styled.View`
   flex-direction: row;
-  width: 328px;
+  width: ${width - 40}px;
   height: 56px;
   background-color: #ffffff;
   border-radius: 8px;
@@ -57,12 +67,11 @@ export const ContainerImage = styled.View`
 `;
 
 export const ContainerInformation = styled.View`
-  width: 328px;
+  width: ${width - 40}px;
   height: 120px;
   background-color: #ffffff;
   border-radius: 8px;
-  justify-content: space-evenly;
-  padding-horizontal: 15px;
+  padding: 15px;
 `;
 
 export const LiningUp = styled.View`
@@ -84,11 +93,12 @@ export const ButtonAdd = styled.TouchableOpacity`
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background-color: #da0d1e;
+  background-color: #DA0D1E;
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 18px;
+  bottom: 15px;
+  right: 10px;
 `;
 
 /////////////////////////////////////////////////
@@ -125,7 +135,7 @@ export const TextInformation = styled.Text`
 `;
 
 export const SubContainer= styled.View`
-  padding: 20px;
+  padding: 10px;
 `;
 
 export const NameFruit = styled.Text`

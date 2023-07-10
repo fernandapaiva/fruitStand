@@ -1,27 +1,49 @@
 import React from "react";
-import {Main, InputName, NameText, Name, ContentInitial, Separator30, Separator15, Cpf, LiningContent, Separator10, Phone} from "./styles";
+import { useNavigation } from '@react-navigation/native';
+import {
+  Container,
+  InputPhone,
+  Label,
+  LayoutOld,
+  CloseButton,
+  Separator30,
+  Separator15,
+  LiningContent,
+  LayoutCurrent,
+  ViewButton,
+} from "./styles";
+import Button from "../../../components/Button";
+import CloseRed from "../../../assets/images/CloseRed";
+import Right from "../../../assets/images/Right";
 
-export default function Step2 (){
+export default function Step3() {
 
-    return(
-        <Main>
-            <Separator15 />
-            <ContentInitial>
-                {/* Botão */}
-            </ContentInitial>
-            <Separator15 />
-            <LiningContent>
-            <Name>Nome</Name>
-            <Cpf>CPF</Cpf>
-            <Phone>Telefone</Phone>
-            </LiningContent>
-            <Separator30 />
-            <InputName 
-            placeholder="Digite o número de telefone do colaborador"
-            placeholderTextColor="#383b3d"
-            />
-            <Separator15 />
-            <NameText>Mask cel</NameText>
-        </Main>
-    )
+  const navigation = useNavigation();
+
+  return (
+    <Container>
+      <Separator15 />
+      <CloseButton onPress={() => navigation.navigate('Supplier')}>
+        <CloseRed />
+      </CloseButton>
+      <Separator15 />
+      <LiningContent>
+        <LayoutOld>Nome</LayoutOld>
+        <Right />
+        <LayoutOld>CPF</LayoutOld>
+        <Right />
+        <LayoutCurrent>Telefone</LayoutCurrent>
+      </LiningContent>
+      <Separator30 />
+      <Label>Digite o número de telefone do colaborador</Label>
+      <Separator15 />
+      <InputPhone
+        placeholder="(00) 00000-0000"
+        placeholderTextColor="#6C7072"
+      />
+      <ViewButton>
+      <Button onPress={() => navigation.navigate('Step4')} />
+      </ViewButton>
+    </Container>
+  );
 }

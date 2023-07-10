@@ -1,24 +1,37 @@
 import React from "react";
-import {Main, InputName, NameText, Name, ContentInitial, Separator30, Separator15} from "./styles";
-import { Content } from "../../Supplier/styles";
+import { useNavigation } from "@react-navigation/native";
+import {
+  Container,
+  InputName,
+  Label,
+  LayoutOld,
+  CloseButton,
+  Separator30,
+  Separator15,
+  ViewButton,
+} from "./styles";
+import CloseRed from "../../../assets/images/CloseRed";
+import Button from "../../../components/Button";
 
-export default function Step1 (){
+export default function Step1() {
+  const navigation = useNavigation();
 
-    return(
-        <Main>
-            <Separator15 />
-            <ContentInitial>
-                {/* Botão */}
-            </ContentInitial>
-            <Separator15 />
-            <Name>Nome</Name>
-            <Separator30 />
-            <InputName 
-            placeholder="Digite o nome do colaborador"
-            placeholderTextColor="#383b3d"
-            />
-            <Separator15 />
-            <NameText>Nome</NameText>
-        </Main>
-    )
+  return (
+    <Container>
+      <Separator15 />
+      <CloseButton onPress={() => navigation.navigate('Supplier')}>
+        <CloseRed />
+      </CloseButton>
+      <Separator15 />
+      <LayoutOld>Nome</LayoutOld>
+      <Separator30 />
+      <Label>Digite o nome do colaborador</Label>
+      <InputName 
+      placeholder="Nome" 
+      placeholderTextColor="#6C7072" />
+      <ViewButton>
+      <Button onPress={() => navigation.navigate('Step2')} />
+      </ViewButton>
+    </Container>
+  );
 }
