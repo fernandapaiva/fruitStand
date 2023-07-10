@@ -6,6 +6,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 /// SCREENS 
 import Supplier from './screens/Supplier';
 import Fruits from './screens/Fruits';
+import Step1 from './screens/SupplierRegister/Step1';
+import Step2 from './screens/SupplierRegister/Step2';
+import Step3 from './screens/SupplierRegister/Step3';
 
 /// ICONS
 import People from './assets/images/People';
@@ -56,6 +59,9 @@ function App() {
               screenOptions={{headerShown: false}}
             >
                 <Stack.Screen name='BottomTab' component={BottomTab}/>
+                <Stack.Screen name='Step1' component={Step1}/>
+                <Stack.Screen name='Step2' component={Step2}/>
+                <Stack.Screen name='Step3' component={Step3}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

@@ -11,13 +11,12 @@ import {
   AlignContainer,
   ColumView,
   TextData,
-  Sepator15,
+  Separator15,
   TitleRegistration,
   Content,
 } from "./styles";
 import Close from "../../assets/images/Close";
 import Person from "../../assets/images/Person";
-import { SepatorItem } from "../../components/RedButton/styles";
 import RedButton from "../../components/RedButton";
 import Call from "../../assets/images/Call";
 
@@ -76,7 +75,7 @@ export default function Supplier() {
       <RedButton />
     </Content>
   );
-
+  
   return (
     <Container>
       {renderEmptySupplier()}

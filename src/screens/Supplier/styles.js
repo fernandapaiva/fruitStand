@@ -17,15 +17,15 @@ export const Container = styled.View`
   background-color: #f0f4f7;
 `;
 
-export const Sepator20 = styled.View`
+export const Separator20 = styled.View`
   height: 20px;
 `;
 
-export const Sepator15 = styled.View`
+export const Separator15 = styled.View`
   height: 15px;
 `;
 
-export const SepatorItens = styled.View`
+export const SeparatorItens = styled.View`
   width: 10px;
 `;
 
