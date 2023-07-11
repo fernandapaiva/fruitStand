@@ -1,5 +1,5 @@
 import React from "react";
-// import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import {
   Container,
   Separator24,
@@ -17,6 +17,9 @@ import Register from "../../../assets/images/Register";
 import RedButton from "../../../components/RedButton";
 
 export default function LestStep() {
+
+  const navigation = useNavigation();
+
   return (
     <Container>
       <Separator24 />
@@ -35,7 +38,7 @@ export default function LestStep() {
         </Information>
       </AligningText>
       <ViewButton>
-        <RedButton />
+        <RedButton onPress={() => navigation.navigate('Supplier')}/>
       </ViewButton>
     </Container>
   );

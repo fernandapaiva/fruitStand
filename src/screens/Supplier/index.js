@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import {
   Container,
   FirstView,
+  ButtonClose,
   PageTitle,
   NameFruit,
   SubContainer,
@@ -105,9 +106,12 @@ export default function Supplier() {
 
   const renderSupplierDetails = () => (
     <>
+    <Separator15 />
       <FirstView>
         <PageTitle>Fornecedor</PageTitle>
+        <ButtonClose onPress={() => navigation.navigate("Supplier")}>
         <Close />
+        </ButtonClose>
       </FirstView>
       <ColumView>
         <TextInformation>Lorem Ipsum</TextInformation>
@@ -124,12 +128,15 @@ export default function Supplier() {
           <TextData>(00) 00000-0000</TextData>
         </AlignContainer>
       </ColumView>
+      <Separator24 />
+      <>
       <TextAbove>Frutas</TextAbove>
+      </>
       <FlatList
         data={DataFruit}
         renderItem={({ item }) => (
           <SubContainer>
-            <NameFruit>{item.fruta}</NameFruit>
+            <NameFruit> • {item.fruta}</NameFruit>
           </SubContainer>
         )}
       />

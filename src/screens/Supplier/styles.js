@@ -70,6 +70,9 @@ export const InputSearch = styled.TextInput`
   height: 56px;
   background-color: #ffffff;
   border-radius: 8px;
+  font-size: 15px;
+  color: #363A3C;
+  font-family: 'Poppins-Regular';
 `;
 
 export const ContainerImage = styled.View`
@@ -94,11 +97,13 @@ export const LiningUp = styled.View`
 export const DataSupplier = styled.Text`
   font-size: 13px;
   color: #6c7072;
+  font-family: 'Poppins-Medium';
 `;
 
 export const NameSupplier = styled.Text`
   font-size: 16px;
   color: #212324;
+  font-family: 'Poppins-Regular';
 `;
 
 export const ButtonAdd = styled.TouchableOpacity`
@@ -117,18 +122,25 @@ export const ButtonAdd = styled.TouchableOpacity`
 
 export const FirstView = styled.View`
   flex-direction: row;
+  width: 100%;
   justify-content: space-between;
-  min-height: 72px;
-  padding: 20px;
+  padding: 16px;
 `;
 
 export const PageTitle = styled.Text`
   font-size: 24px;
   color: #da0d1e;
+  font-family: 'Poppins-Regular';
+`;
+
+export const ButtonClose = styled.TouchableOpacity``;
+
+export const Separator28 = styled.View`
+  height: 28px;
 `;
 
 export const ColumView = styled.View`
-  padding: 20px;
+  margin-left: 20px;
 `
 
 export const AlignContainer = styled.View`
@@ -139,23 +151,29 @@ export const AlignContainer = styled.View`
 export const TextData = styled.Text`
   font-size: 13px;
   color: #6c7072;
+  font-family: 'Poppins-Medium';
 `;
 
 export const TextInformation = styled.Text`
   font-size: 24px;
   color: #212324;
+  font-family: 'Poppins-Regular';
 `;
 
 export const SubContainer= styled.View`
-  padding: 10px;
+  margin-left: 15px;
+  padding: 5px;
 `;
 
 export const NameFruit = styled.Text`
   font-size: 13px;
   color: #6c7072;
+  font-family: 'Poppins-Regular';
 `;
 
 export const TextAbove = styled.Text`
   font-size: 16px;
   color: #212324;
+  font-family: 'Poppins-Regular';
+  margin-left: 20px;
 `;
