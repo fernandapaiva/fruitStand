@@ -41,11 +41,20 @@ export const Label = styled.Text`
   font-family: 'Poppins-Regular';
 `;
 
-export const InputPhone = styled.TextInput`
-  width: 208px;
-  min-height: 24px;
-  font-size: 24px;
-  color: #6C7072;
+export const RowView = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const BackgroundFruits = styled.View`
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+`;
+
+export const NameFruit = styled.Text`
+  font-size: 16px;
+  color: #212324;
   font-family: 'Poppins-Regular';
 `;
 

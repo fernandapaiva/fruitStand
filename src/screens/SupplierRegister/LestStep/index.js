@@ -23,7 +23,7 @@ export default function LestStep() {
   return (
     <Container>
       <Separator24 />
-      <CloseButton>
+      <CloseButton onPress={() => navigation.navigate('Supplier')}>
         <Close />
       </CloseButton>
       <Separator40 />
@@ -38,7 +38,11 @@ export default function LestStep() {
         </Information>
       </AligningText>
       <ViewButton>
-        <RedButton onPress={() => navigation.navigate('Supplier')}/>
+        <RedButton 
+        onPress={() => navigation.navigate('Supplier')}
+        title='Voltar ao início'
+        Icon={false}
+        />
       </ViewButton>
     </Container>
   );

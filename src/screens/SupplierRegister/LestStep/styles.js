@@ -17,7 +17,7 @@ export const Separator40 = styled.View`
   height: 40px;
 `;
 
-export const CloseButton = styled.View`
+export const CloseButton = styled.TouchableOpacity`
   align-self: flex-end;
   margin-right: 16px;
 `;

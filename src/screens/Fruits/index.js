@@ -74,7 +74,10 @@ export default function Fruits() {
     <Content>
       <TitleRegistration>Cadastre sua primeira fruta</TitleRegistration>
       <Separator40 />
-      <RedButton onPress={() => navigation.navigate("Step1")} />
+      <RedButton 
+      onPress={() => navigation.navigate('RegisterFruits')}
+      title="Cadastrar Fruta"
+      />
     </Content>
   );
 
@@ -120,7 +123,9 @@ export default function Fruits() {
           )}
         />
       </SubContainer>
-      <ButtonAdd activeOpacity={0.6}>
+      <ButtonAdd 
+      onPress={() =>navigation.navigate('RegisterFruits')}
+      activeOpacity={0.6}>
         <Add />
       </ButtonAdd>
     </>
@@ -132,7 +137,7 @@ export default function Fruits() {
       behavior="height"
       keyboardVerticalOffset={-50}
     >
-      <Container>{renderListFruits()}</Container>
+      <Container>{renderEmptyFruits()}</Container>
     </KeyboardAvoidingView>
   );
 }

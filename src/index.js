@@ -11,6 +11,8 @@ import Step2 from "./screens/SupplierRegister/Step2";
 import Step3 from "./screens/SupplierRegister/Step3";
 import Step4 from "./screens/SupplierRegister/Step4";
 import LestStep from "./screens/SupplierRegister/LestStep";
+import RegisterFruits from './screens/RegisterFruits';
+
 
 /// ICONS
 import People from "./assets/images/People";
@@ -66,6 +68,7 @@ function App() {
         <Stack.Screen name="Step3" component={Step3} />
         <Stack.Screen name="Step4" component={Step4} />
         <Stack.Screen name="LestStep" component={LestStep} />
+        <Stack.Screen name="RegisterFruits" component={RegisterFruits} />
       </Stack.Navigator>
     </NavigationContainer>
   );

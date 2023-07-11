@@ -147,7 +147,10 @@ export default function Supplier() {
     <Content>
       <TitleRegistration>Cadastre seu primeiro fornecedor</TitleRegistration>
       <Separator40 />
-      <RedButton onPress={() => navigation.navigate("Step1")} />
+      <RedButton 
+      onPress={() => navigation.navigate("Step1")} 
+      title='Cadastrar Fornecedor'
+      />
     </Content>
   );
 
