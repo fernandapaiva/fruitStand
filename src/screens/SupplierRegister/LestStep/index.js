@@ -1,30 +1,41 @@
 import React from "react";
-import { useNavigation } from '@react-navigation/native';
+// import { useNavigation } from '@react-navigation/native';
 import {
   Container,
-  Label,
+  Separator24,
+  Separator40,
+  SubContainer,
   CloseButton,
-  Separator15,
   ViewButton,
+  Description,
+  Information,
+  Separator16,
+  AligningText,
 } from "./styles";
-import Button from "../../../components/Button";
-import Close from "../../../assets/images/CloseRed";
+import Close from "../../../assets/images/Close";
+import Register from "../../../assets/images/Register";
+import RedButton from "../../../components/RedButton";
 
-export default function Step3() {
-
-  const navigation = useNavigation();
-
+export default function LestStep() {
   return (
     <Container>
-      <Separator15 />
-      <CloseButton onPress={() => navigation.navigate('Supplier')}>
+      <Separator24 />
+      <CloseButton>
         <Close />
       </CloseButton>
-      <Separator15 />
-      <Label>Você cadastrou o fornecedor Lorem Ipsum dolor com sucesso</Label>
-      <Separator15 />
+      <Separator40 />
+      <SubContainer>
+        <Register />
+      </SubContainer>
+      <AligningText>
+        <Description>Fornecedor cadastrado</Description>
+        <Separator16 />
+        <Information>
+          {"Você cadastrou o fornecedor Lorem\nIpsum dolor com sucesso!"}
+        </Information>
+      </AligningText>
       <ViewButton>
-      <Button onPress={() => navigation.navigate('Supplier')} />
+        <RedButton />
       </ViewButton>
     </Container>
   );

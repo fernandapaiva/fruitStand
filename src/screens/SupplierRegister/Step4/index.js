@@ -2,12 +2,11 @@ import React from "react";
 import { useNavigation } from '@react-navigation/native';
 import {
   Container,
-  InputPhone,
   Label,
   LayoutOld,
   CloseButton,
-  Separator30,
-  Separator15,
+  Separator24,
+  Separator40,
   LiningContent,
   LayoutCurrent,
   ViewButton,
@@ -22,11 +21,11 @@ export default function Step3() {
 
   return (
     <Container>
-      <Separator15 />
+      <Separator24 />
       <CloseButton onPress={() => navigation.navigate('Supplier')}>
         <CloseRed />
       </CloseButton>
-      <Separator15 />
+      <Separator24 />
       <LiningContent>
         <LayoutOld>Nome</LayoutOld>
         <Right />
@@ -36,9 +35,9 @@ export default function Step3() {
         <Right />
         <LayoutCurrent>Frutas</LayoutCurrent>
       </LiningContent>
-      <Separator30 />
+      <Separator40 />
       <Label>Escolha as frutas que esse fornecedor nos fornece</Label>
-      <Separator15 />
+      <Separator24 />
       <ViewButton>
       <RedButton onPress={() => navigation.navigate('LestStep')} />
       </ViewButton>

@@ -6,8 +6,8 @@ import {
   Label,
   LayoutOld,
   CloseButton,
-  Separator30,
-  Separator15,
+  Separator24,
+  Separator40,
   LayoutCurrent,
   LiningContent,
   ViewButton,
@@ -21,21 +21,20 @@ export default function Step2() {
 
   return (
     <Container>
-      <Separator15 />
+      <Separator24 />
       <CloseButton onPress={() => navigation.navigate("Supplier")}>
         <CloseRed />
       </CloseButton>
-      <Separator15 />
+      <Separator24 />
       <LiningContent>
         <LayoutOld>Nome</LayoutOld>
         <Right />
         <LayoutCurrent>CPF</LayoutCurrent>
       </LiningContent>
-      <Separator30 />
+      <Separator40 />
       <Label>Digite o CPF do colaborador</Label>
-      <Separator15 />
+      <Separator24 />
       <InputCpf placeholder="000.000.000-00" placeholderTextColor="#6C7072" />
-      <Separator15 />
       <ViewButton>
         <Button onPress={() => navigation.navigate("Step3")} />
       </ViewButton>

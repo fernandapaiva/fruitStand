@@ -6,12 +6,12 @@ export const Container = styled.View`
   padding: 20px;
 `;
 
-export const Separator30 = styled.View`
-  height: 30px;
+export const Separator40 = styled.View`
+  height: 40px;
 `;
 
-export const Separator15 = styled.View`
-  height: 15px;
+export const Separator24 = styled.View`
+  height: 24px;
 `;
 
 export const CloseButton = styled.TouchableOpacity`
@@ -21,10 +21,6 @@ export const CloseButton = styled.TouchableOpacity`
 export const LiningContent = styled.View`
   flex-direction: row;
   align-items: center;
-`;
-
-export const Separator10 = styled.View`
-  height: 10px;
 `;
 
 export const LayoutOld = styled.Text`
@@ -43,6 +39,7 @@ export const InputCpf = styled.TextInput`
   width: 80%;
   min-height: 24px;
   font-size: 24px;
+  right: 5px;
   color: #6C7072;
   font-family: 'Poppins-Regular';
 `;
@@ -55,7 +52,7 @@ export const Label = styled.Text`
 
 export const ViewButton = styled.View`
   width: 100%;
-  bottom: 10px;
+  bottom: 40px;
   left: 10px;
   right: 0;
   position: absolute;

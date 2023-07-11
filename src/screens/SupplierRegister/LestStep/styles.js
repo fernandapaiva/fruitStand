@@ -3,30 +3,49 @@ import styled from "styled-components/native";
 export const Container = styled.View`
   flex: 1;
   background-color: #F0F4F7;
-  padding: 20px;
 `;
 
-export const CloseButton = styled.TouchableOpacity`
+export const SubContainer = styled.View`
+  align-items: center;
+`;
+
+export const Separator24 = styled.View`
+  height: 24px;
+`;
+
+export const Separator40 = styled.View`
+  height: 40px;
+`;
+
+export const CloseButton = styled.View`
   align-self: flex-end;
+  margin-right: 16px;
 `;
 
-export const Separator15 = styled.View`
-  height: 15px;
+export const AligningText = styled.View`
+  margin-left: 16px;
+  top: 150px;
 `;
 
-export const Separator10 = styled.View`
-  height: 10px;
+export const Description = styled.Text`
+  font-size: 19px;
+  font-family: 'Poppins-Medium';
+  color: #212324;
 `;
 
-export const Label = styled.Text`
+export const Information = styled.Text`
   font-size: 15px;
-  color: #6c7072;
   font-family: 'Poppins-Regular';
+  color: #6C7072;
+`;
+
+export const Separator16 = styled.View`
+  height: 16px;
 `;
 
 export const ViewButton = styled.View`
-  width: 100%;
-  bottom: 10px;
+   width: 100%;
+  bottom: 40px;
   left: 10px;
   right: 0;
   position: absolute;

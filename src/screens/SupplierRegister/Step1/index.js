@@ -7,8 +7,10 @@ import {
   LayoutOld,
   CloseButton,
   Separator30,
-  Separator15,
+  Separator28,
   ViewButton,
+  Separator44,
+  Separator24,
 } from "./styles";
 import CloseRed from "../../../assets/images/CloseRed";
 import Button from "../../../components/Button";
@@ -18,14 +20,15 @@ export default function Step1() {
 
   return (
     <Container>
-      <Separator15 />
+      <Separator30 />
       <CloseButton onPress={() => navigation.navigate('Supplier')}>
         <CloseRed />
       </CloseButton>
-      <Separator15 />
+      <Separator28 />
       <LayoutOld>Nome</LayoutOld>
-      <Separator30 />
+      <Separator44 />
       <Label>Digite o nome do colaborador</Label>
+      <Separator24 />
       <InputName 
       placeholder="Nome" 
       placeholderTextColor="#6C7072" />

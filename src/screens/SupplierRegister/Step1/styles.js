@@ -6,12 +6,20 @@ export const Container = styled.View`
   padding: 20px;
 `;
 
+export const Separator28 = styled.View`
+  height: 28px;
+`;
+
 export const Separator30 = styled.View`
   height: 30px;
 `;
 
-export const Separator15 = styled.View`
-  height: 15px;
+export const Separator44 = styled.View`
+  height: 44px;
+`;
+
+export const Separator24 = styled.View`
+  height: 24px;
 `;
 
 export const CloseButton = styled.TouchableOpacity`
@@ -41,7 +49,7 @@ export const InputName = styled.TextInput`
 
 export const ViewButton = styled.View`
   width: 100%;
-  bottom: 10px;
+  bottom: 40px;
   left: 10px;
   right: 0;
   position: absolute;

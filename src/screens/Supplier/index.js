@@ -13,6 +13,7 @@ import {
   ColumView,
   TextData,
   Separator15,
+  Separator16,
   TitleRegistration,
   Content,
   SeparatorItens,
@@ -20,13 +21,15 @@ import {
   ViewInput,
   ContainerImage,
   ContainerInformation,
-  Separator20,
+  Separator24,
+  Separator40,
   Main,
   DataSupplier,
   LiningUp,
   NameSupplier,
   ButtonAdd,
   Separator8,
+  Separator48,
 } from "./styles";
 import Close from "../../assets/images/Close";
 import Person from "../../assets/images/Person";
@@ -136,13 +139,14 @@ export default function Supplier() {
   const renderEmptySupplier = () => (
     <Content>
       <TitleRegistration>Cadastre seu primeiro fornecedor</TitleRegistration>
+      <Separator40 />
       <RedButton onPress={() => navigation.navigate("Step1")} />
     </Content>
   );
 
   const renderListSupplier = () => (
     <>
-      <Separator20 />
+      <Separator48 />
       <Main>
         <ViewInput>
           <ContainerImage>
@@ -153,7 +157,7 @@ export default function Supplier() {
             placeholderTextColor="#363A3C"
           />
         </ViewInput>
-        <Separator20 />
+        <Separator24 />
         <FlatList
           data={DATA}
           renderItem={({ item }) => (
@@ -173,7 +177,7 @@ export default function Supplier() {
                   <DataSupplier>{item.telefone}</DataSupplier>
                 </LiningUp>
               </ContainerInformation>
-              <Separator15 />
+              <Separator16 />
             </>
           )}
         />
@@ -190,7 +194,7 @@ export default function Supplier() {
       behavior="height"
       keyboardVerticalOffset={-50}
     >
-      <Container>{renderListSupplier()}</Container>
+      <Container>{renderEmptySupplier()}</Container>
     </KeyboardAvoidingView>
   );
 }

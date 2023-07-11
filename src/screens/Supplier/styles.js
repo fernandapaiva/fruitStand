@@ -14,18 +14,23 @@ export const TitleRegistration = styled.Text`
   font-size: 16px;
   color: #212324;
   align-self: flex-start;
-  margin-left: 40px;
-  margin-bottom: 30px;
+  margin-left: 20px;
   font-family: 'Poppins-Regular';
 `;
+
+export const Separator40 = styled.View`
+  height: 40px;
+`;
+
+////////////////////////////////////
 
 export const Container = styled.View`
   flex: 1;
   background-color: #f0f4f7;
 `;
 
-export const Separator20 = styled.View`
-  height: 20px;
+export const Separator24 = styled.View`
+  height: 24px;
 `;
 
 export const Separator15 = styled.View`
@@ -33,17 +38,24 @@ export const Separator15 = styled.View`
 `;
 
 export const SeparatorItens = styled.View`
-  width: 10px;
+  width: 8px;
 `;
 
 export const Separator8 = styled.View`
   height: 10px;
 `;
 
+export const Separator48 = styled.View`
+  height: 48px;
+`;
+
+export const Separator16 = styled.View`
+  height: 16px;
+`;
+
 export const Main = styled.View`
   align-items: center;
 `;
-
 
 export const ViewInput = styled.View`
   flex-direction: row;

@@ -6,8 +6,8 @@ import {
   Label,
   LayoutOld,
   CloseButton,
-  Separator30,
-  Separator15,
+  Separator24,
+  Separator40,
   LiningContent,
   LayoutCurrent,
   ViewButton,
@@ -22,11 +22,11 @@ export default function Step3() {
 
   return (
     <Container>
-      <Separator15 />
+      <Separator24 />
       <CloseButton onPress={() => navigation.navigate('Supplier')}>
         <CloseRed />
       </CloseButton>
-      <Separator15 />
+      <Separator24 />
       <LiningContent>
         <LayoutOld>Nome</LayoutOld>
         <Right />
@@ -34,9 +34,9 @@ export default function Step3() {
         <Right />
         <LayoutCurrent>Telefone</LayoutCurrent>
       </LiningContent>
-      <Separator30 />
-      <Label>Digite o número de telefone do colaborador</Label>
-      <Separator15 />
+      <Separator40 />
+      <Label>{'Digite o número de telefone do \ncolaborador'}</Label>
+      <Separator24 />
       <InputPhone
         placeholder="(00) 00000-0000"
         placeholderTextColor="#6C7072"
