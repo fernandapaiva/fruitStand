@@ -1,7 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import { FlatList } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import CheckBox from '@react-native-community/checkbox'
 import {
   Container,
   Label,
@@ -9,16 +8,19 @@ import {
   CloseButton,
   Separator24,
   Separator40,
+  Separator16,
   LiningContent,
   LayoutCurrent,
   ViewButton,
   BackgroundFruits,
-  NameFruit,
-  RowView,
+  FullText,
+  ButtonCheckBoxAll,
 } from "./styles";
 import CloseRed from "../../../assets/images/CloseRed";
 import Right from "../../../assets/images/Right";
 import RedButton from "../../../components/RedButton";
+
+import CheckBox from "../../../components/CheckBox";
 
 
 const DATA = [
@@ -66,7 +68,39 @@ const DATA = [
 
 export default function Step4() {
 
+  const [list, setList] = useState(DATA);
+  const [allList, setAllList] = useState(false);
+
   const navigation = useNavigation();
+
+  const onChangeCheckBox = (itemSelected, value) => {
+    const newData = list.map(item => {
+      if (item.fruta === itemSelected.fruta) {
+        return {
+          ...item,
+          selected: value
+        }
+      }
+
+      return item
+    })
+
+    setList(newData);
+
+  }
+
+  const onChangeCheckBoxAll = () => {
+    const newData = list.map(item => {
+      return {
+        ...item,
+        selected: !allList
+      }
+    })
+
+    setAllList(!allList)
+    setList(newData);
+
+  }
 
   return (
     <Container>
@@ -87,18 +121,22 @@ export default function Step4() {
       <Separator40 />
       <Label>Escolha as frutas que esse fornecedor nos fornece</Label>
      <>
-     <RowView>
-      <CheckBox />
-      <NameFruit>Todas</NameFruit>
-     </RowView>
+     <Separator24 />
+     <ButtonCheckBoxAll onPress={() => onChangeCheckBoxAll()}>
+      <CheckBox checked={allList} onPress={() => onChangeCheckBoxAll()} />
+      <FullText>Todas</FullText>
+     </ButtonCheckBoxAll>
+     <Separator16 />
      <FlatList
-        data={DATA}
+        data={list}
         renderItem={({ item }) => (
-          <BackgroundFruits>
-            <CheckBox value={item.selected}/>
-            <NameFruit> {item.fruta}</NameFruit>
+          <BackgroundFruits onPress={() => onChangeCheckBox(item, !item.selected)}>
+            <CheckBox 
+              checked={item.selected}
+              onPress= {() => onChangeCheckBox(item, !item.selected)}
+            />
+            <FullText> {item.fruta}</FullText>
           </BackgroundFruits>
-          
         )}
       />
      </> 

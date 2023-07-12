@@ -18,6 +18,10 @@ export const Separator24 = styled.View`
   height: 24px;
 `;
 
+export const Separator16 = styled.View`
+  height: 8px;
+`;
+
 export const LiningContent = styled.View`
   flex-direction: row;
   align-items: center;
@@ -41,21 +45,21 @@ export const Label = styled.Text`
   font-family: 'Poppins-Regular';
 `;
 
-export const RowView = styled.View`
+export const ButtonCheckBoxAll = styled.TouchableOpacity`
   flex-direction: row;
-  align-items: center;
 `;
 
-export const BackgroundFruits = styled.View`
+export const BackgroundFruits = styled.TouchableOpacity`
   flex-direction: row;
-  align-items: center;
-  padding: 5px;
+  margin-left: 8px;
+  margin: 8px;
 `;
 
-export const NameFruit = styled.Text`
+export const FullText = styled.Text`
   font-size: 16px;
   color: #212324;
   font-family: 'Poppins-Regular';
+  margin-left: 8px;
 `;
 
 export const ViewButton = styled.View`

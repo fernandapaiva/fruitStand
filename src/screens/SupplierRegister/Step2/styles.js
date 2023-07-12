@@ -37,9 +37,8 @@ export const LayoutCurrent = styled.Text`
 
 export const InputCpf = styled.TextInput`
   width: 80%;
-  min-height: 24px;
+  height: 60px;
   font-size: 24px;
-  right: 5px;
   color: #6C7072;
   font-family: 'Poppins-Regular';
 `;
