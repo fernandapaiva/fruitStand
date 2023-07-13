@@ -1,8 +1,10 @@
 import styled from "styled-components/native";
+import { colors } from '../../assets/colors/styles';
+
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #212324;
+  background-color: ${colors.Black};
   opacity: 0.92;
   justify-content: flex-end;
 `;
@@ -10,7 +12,7 @@ export const Container = styled.View`
 export const SubContainer = styled.View`
   width: 100%;
   height: 120px;
-  background-color: #F0F4F7;
+  background-color: ${colors.Backgroud};
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   justify-content: center;
@@ -29,6 +31,6 @@ export const SeparatorItens =styled.View`
 export const TextModal =styled.Text`
   font-size: 13px;
   font-family: 'Poppins-Medium';
-  color: #212324;
+  color: ${colors.Black};
   margin-left: 8px;
 `;

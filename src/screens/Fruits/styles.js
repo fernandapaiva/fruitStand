@@ -1,23 +1,24 @@
 import styled from "styled-components/native";
+import { colors } from '../../assets/colors/styles';
 import {Dimensions} from 'react-native';
 
 const {width} = Dimensions.get('window')
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #f0f4f7;
+  background-color: ${colors.Backgroud};
 `;
 
 export const Content = styled.View`
   flex: 1;
-  background-color: #f0f4f7;
+  background-color: #${colors.Backgroud};
   align-items: center;
   justify-content: center;
 `;
 
 export const TitleRegistration = styled.Text`
   font-size: 16px;
-  color: #212324;
+  color: ${colors.Black};
   align-self: flex-start;
   margin-left: 20px;
   font-family: 'Poppins-Regular';
@@ -65,14 +66,14 @@ export const ViewInput = styled.View`
   flex-direction: row;
   width: ${width - 40}px;
   height: 56px;
-  background-color: #ffffff;
+  background-color: ${colors.White};
   border-radius: 8px;
 `;
 
 export const InputSearch = styled.TextInput`
   width: 80%;
   height: 56px;
-  background-color: #ffffff;
+  background-color: ${colors.White};
   border-radius: 8px;
   font-size: 15px;
   color: #363A3C;
@@ -88,7 +89,7 @@ export const ContainerImage = styled.View`
 export const ContainerInformation = styled.View`
   width: ${width - 40}px;
   height: 104px;
-  background-color: #ffffff;
+  background-color: ${colors.White};
   border-radius: 8px;
   padding: 15px;
 `;
@@ -111,7 +112,7 @@ export const NameSupplier = styled.Text`
 
 export const ValueFruits = styled.Text`
   font-size: 12px;
-  color: #008c21;
+  color: ${colors.Green};
   font-family: 'Poppins-Regular';
 `;
 
@@ -123,7 +124,7 @@ export const StockFruits = styled.Text`
 
 export const NameFruits = styled.Text`
   font-size: 16px;
-  color: #212324;
+  color: ${colors.Black};
   font-family: 'Poppins-Regular';
 `;
 
@@ -132,7 +133,7 @@ export const ButtonAdd = styled.TouchableOpacity`
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background-color: #DA0D1E;
+  background-color: ${colors.Red};
   justify-content: center;
   align-items: center;
   position: absolute;

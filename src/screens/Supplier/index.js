@@ -106,11 +106,11 @@ export default function Supplier() {
 
   const renderSupplierDetails = () => (
     <>
-    <Separator15 />
+      <Separator15 />
       <FirstView>
         <PageTitle>Fornecedor</PageTitle>
         <ButtonClose onPress={() => navigation.navigate("Supplier")}>
-        <Close />
+          <Close />
         </ButtonClose>
       </FirstView>
       <ColumView>
@@ -130,7 +130,7 @@ export default function Supplier() {
       </ColumView>
       <Separator24 />
       <>
-      <TextAbove>Frutas</TextAbove>
+        <TextAbove>Frutas</TextAbove>
       </>
       <FlatList
         data={DataFruit}
@@ -147,9 +147,9 @@ export default function Supplier() {
     <Content>
       <TitleRegistration>Cadastre seu primeiro fornecedor</TitleRegistration>
       <Separator40 />
-      <RedButton 
-      onPress={() => navigation.navigate("Step1")} 
-      title='Cadastrar Fornecedor'
+      <RedButton
+        onPress={() => navigation.navigate("Step1")}
+        title="Cadastrar Fornecedor"
       />
     </Content>
   );

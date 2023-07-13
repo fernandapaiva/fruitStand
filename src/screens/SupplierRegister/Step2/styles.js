@@ -56,3 +56,10 @@ export const ViewButton = styled.View`
   right: 0;
   position: absolute;
 `;
+
+export const ErrorMensage = styled.Text`
+  font-size: 12px;
+  color: #930000;
+  font-family: 'Poppins-Regular';
+  margin: 8px;
+`;
