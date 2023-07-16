@@ -12,6 +12,7 @@ import {
   LayoutCurrent,
   ViewButton,
   ErrorMensage,
+  Separator15,
 } from "./styles";
 
 //Icons
@@ -27,7 +28,15 @@ import { isValidPhone } from "../../../utils/validators";
 
 export default function Step3() {
   const [phone, setPhone] = useState("");
-  const [errorPhone, serErrorPhone] = useState(false);
+  const [errorPhone, setErrorPhone] = useState(false);
+
+  const onPress = () => {
+    const isValid = isValidPhone(phone)
+    setErrorPhone(!isValid)
+    if(isValid) {
+      navigation.navigate("Step4");
+    }
+  }
 
   const navigation = useNavigation();
 
@@ -47,16 +56,19 @@ export default function Step3() {
       </LiningContent>
       <Separator40 />
       <Label>{"Digite o número de telefone do \ncolaborador"}</Label>
-      <Separator24 />
+      <Separator15 />
       <InputPhone
         value={phone}
         placeholder="(00) 00000-0000"
-        placeholderTextColor="#6C7072"
+        placeholderTextColor={errorPhone ? "#930000" : "#6C7072"}
         onChangeText={(text) => setPhone(phoneMask(text))}
         keyboardType="numeric"
+        maxLength={15}
+        errorPhone={errorPhone}
       />
+      {errorPhone && <ErrorMensage>Insira um telefone válido</ErrorMensage>}
       <ViewButton>
-        <Button onPress={() => navigation.navigate("Step4")} />
+        <Button onPress={() => onPress()} />
       </ViewButton>
     </Container>
   );

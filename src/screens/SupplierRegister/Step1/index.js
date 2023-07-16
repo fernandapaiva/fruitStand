@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigation } from "@react-navigation/native";
 import {
   Container,
@@ -9,14 +9,26 @@ import {
   Separator30,
   Separator28,
   ViewButton,
-  Separator44,
-  Separator24,
+  Separator40,
+  Separator15,
+  ErrorMensage
 } from "./styles";
 import CloseRed from "../../../assets/images/CloseRed";
 import Button from "../../../components/Button";
 
 export default function Step1() {
+  const [name, setName] = useState('');
+  const [errorName, setErrorName] = useState(false);
+
   const navigation = useNavigation();
+
+  const onPress = () => {
+    const isValid = (name)
+    setErrorName(!isValid)
+    if(isValid) {
+      navigation.navigate("Step2");
+    }
+  }
 
   return (
     <Container>
@@ -26,14 +38,19 @@ export default function Step1() {
       </CloseButton>
       <Separator28 />
       <LayoutOld>Nome</LayoutOld>
-      <Separator44 />
+      <Separator40 />
       <Label>Digite o nome do colaborador</Label>
-      <Separator24 />
+      <Separator15 />
       <InputName 
-      placeholder="Nome" 
-      placeholderTextColor="#6C7072" />
+        value={name}
+        placeholder="Nome" 
+        placeholderTextColor={errorName ? "#930000" : "#6C7072"}
+        onChangeText={(text) => setName(text)}
+        errorName={errorName}
+      />
+      {errorName && <ErrorMensage>Insira um nome válido</ErrorMensage>}
       <ViewButton>
-      <Button onPress={() => navigation.navigate('Step2')} />
+      <Button onPress={() => onPress()} />
       </ViewButton>
     </Container>
   );

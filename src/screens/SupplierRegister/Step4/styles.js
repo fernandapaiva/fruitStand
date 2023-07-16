@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const Container = styled.View`
   flex: 1;
   background-color: #F0F4F7;
-  padding: 20px;
+  padding-horizontal: 20px;
 `;
 
 export const CloseButton = styled.TouchableOpacity`

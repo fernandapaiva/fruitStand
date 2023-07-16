@@ -6,6 +6,7 @@ const {width} = Dimensions.get('window')
 export const Container = styled.View`
   flex: 1;
   background-color: #F0F4F7;
+  margin-top: 10px;
 `;
 
 export const FirstView = styled.View`
@@ -38,10 +39,10 @@ export const ContentImage = styled.View`
   justify-content: center;
 `;
 
-export const InputName = styled.TextInput`
+export const Input = styled.TextInput`
   width: 85%;
   font-size: 15px;
-  color: #6C7072;
+  color: ${props => (props.errorFruit || props.errorPrice || props.errorStock) ? "#930000" : "#6C7072"};
   font-family: 'Poppins-Regular';
 `;
 
@@ -56,4 +57,12 @@ export const ViewButton = styled.View`
   left: 10px;
   right: 0;
   position: absolute;
+`;
+
+export const ErrorMensage = styled.Text`
+  font-size: 12px;
+  color: #930000;
+  font-family: 'Poppins-Regular';
+  margin-left: 20px;
+  margin-top: 5px;
 `;

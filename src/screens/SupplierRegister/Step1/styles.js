@@ -4,7 +4,7 @@ import { colors } from "../../../assets/colors/styles";
 export const Container = styled.View`
   flex: 1;
   background-color: ${colors.Backgroud};
-  padding: 20px;
+  padding-horizontal: 20px;
 `;
 
 export const Separator28 = styled.View`
@@ -15,12 +15,12 @@ export const Separator30 = styled.View`
   height: 30px;
 `;
 
-export const Separator44 = styled.View`
-  height: 44px;
+export const Separator40 = styled.View`
+  height: 40px;
 `;
 
-export const Separator24 = styled.View`
-  height: 24px;
+export const Separator15 = styled.View`
+  height: 15px;
 `;
 
 export const CloseButton = styled.TouchableOpacity`
@@ -44,7 +44,7 @@ export const InputName = styled.TextInput`
   width: 80%;
   min-height: 24px;
   font-size: 24px;
-  color: #6C7072;
+  color: ${props => props.errorName ? "#930000" : "#6C7072"};
   font-family: 'Poppins-Regular';
 `;
 
@@ -54,4 +54,11 @@ export const ViewButton = styled.View`
   left: 10px;
   right: 0;
   position: absolute;
+`;
+
+export const ErrorMensage = styled.Text`
+  font-size: 12px;
+  color: #930000;
+  font-family: 'Poppins-Regular';
+  margin-left: 5px;
 `;

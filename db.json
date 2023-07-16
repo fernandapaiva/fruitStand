@@ -1,0 +1,23 @@
+{
+    "Supplier": [
+      {
+        "id": 1,
+        "name": "Fernanda",
+        "cpf": "07231913369",
+        "phone": "(88) 99671-9596",
+        "Fruits": [
+            {
+                "name": "Banana"
+            }
+        ]
+      }
+    ],
+    "Fruits": [
+      {
+        "id": 1,
+        "name": "Banana",
+        "price": "2.50",
+        "stock": "75"
+      }
+    ]
+  }

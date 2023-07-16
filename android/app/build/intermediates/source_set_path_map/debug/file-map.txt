@@ -32,5 +32,8 @@ com.fruitstand.app-mergeDebugResources-30 /home/fernanda/Documentos/React Native
 com.fruitstand.app-merged_res-31 /home/fernanda/Documentos/React Native/fruitStand/android/app/build/intermediates/merged_res/debug
 com.fruitstand.app-debug-32 /home/fernanda/Documentos/React Native/fruitStand/android/app/src/debug/res
 com.fruitstand.app-main-33 /home/fernanda/Documentos/React Native/fruitStand/android/app/src/main/res
-com.fruitstand.app-packaged_res-34 /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
-com.fruitstand.app-packaged_res-35 /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
+com.fruitstand.app-packaged_res-34 /home/fernanda/Documentos/React Native/fruitStand/node_modules/@react-native-picker/picker/android/build/intermediates/packaged_res/debug
+com.fruitstand.app-packaged_res-35 /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
+com.fruitstand.app-packaged_res-36 /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
+com.fruitstand.app-packaged_res-37 /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
+com.fruitstand.app-packaged_res-38 /home/fernanda/Documentos/React Native/fruitStand/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug

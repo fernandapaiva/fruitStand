@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const Container = styled.View`
   flex: 1;
   background-color: #F0F4F7;
-  padding: 20px;
+  padding-horizontal: 20px;
 `;
 
 export const Separator40 = styled.View`
@@ -12,6 +12,10 @@ export const Separator40 = styled.View`
 
 export const Separator24 = styled.View`
   height: 24px;
+`;
+
+export const Separator15 = styled.View`
+  height: 15px;
 `;
 
 export const CloseButton = styled.TouchableOpacity`
@@ -39,7 +43,7 @@ export const InputCpf = styled.TextInput`
   width: 80%;
   height: 60px;
   font-size: 24px;
-  color: #6C7072;
+  color: ${props => props.errorCpf ? "#930000" : "#6C7072"};
   font-family: 'Poppins-Regular';
 `;
 
@@ -61,5 +65,5 @@ export const ErrorMensage = styled.Text`
   font-size: 12px;
   color: #930000;
   font-family: 'Poppins-Regular';
-  margin: 8px;
+  margin-left: 5px;
 `;

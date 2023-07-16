@@ -12,6 +12,7 @@ import {
   LiningContent,
   ViewButton,
   ErrorMensage,
+  Separator15,
 } from "./styles";
 
 //Icons
@@ -28,7 +29,17 @@ import {checkCPF} from "../../../utils/validators";
 
 export default function Step2() {
   const [cpf, setCpf] = useState('');
-  const [errorCpf, serErrorCpf] = useState(false);
+  const [errorCpf, setErrorCpf] = useState(false);
+
+  const onPress = () => {
+    const isValid = checkCPF(cpf)
+    setErrorCpf(!isValid)
+    if(isValid) {
+      navigation.navigate("Step3");
+    }
+
+    // navigation.navigate("Step3");
+  }
   
   const navigation = useNavigation();
 
@@ -46,17 +57,19 @@ export default function Step2() {
       </LiningContent>
       <Separator40 />
       <Label>Digite o CPF do colaborador</Label>
-      <Separator24 />
+      <Separator15 />
       <InputCpf 
-      value={cpf}
-      placeholder="000.000.000-00" 
-      placeholderTextColor="#6C7072" 
-      onChangeText={text =>  setCpf(cpfMask(text))}
-      keyboardType="numeric"
-      maxLength={14}
+        value={cpf}
+        placeholder="000.000.000-00" 
+        placeholderTextColor={errorCpf ? "#930000" : "#6C7072"} 
+        onChangeText={text =>  setCpf(cpfMask(text))}
+        keyboardType="numeric"
+        maxLength={14}
+        errorCpf={errorCpf}
       />
+      {errorCpf && <ErrorMensage>Insira um CPF válido</ErrorMensage>}
       <ViewButton>
-        <Button onPress={() => navigation.navigate("Step3")} />
+        <Button onPress={() => onPress()} />
       </ViewButton>
     </Container>
   );
