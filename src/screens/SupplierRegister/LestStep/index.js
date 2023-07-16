@@ -1,5 +1,9 @@
 import React from "react";
+
+// libs
 import { useNavigation } from '@react-navigation/native';
+
+// styles
 import {
   Container,
   Separator24,
@@ -12,8 +16,12 @@ import {
   Separator16,
   AligningText,
 } from "./styles";
+
+// icons
 import Close from "../../../assets/images/Close";
 import Register from "../../../assets/images/Register";
+
+// components
 import RedButton from "../../../components/RedButton";
 
 export default function LestStep() {

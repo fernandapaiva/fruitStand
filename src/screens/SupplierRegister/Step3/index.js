@@ -1,5 +1,9 @@
 import React, {useState} from "react";
+
+// libs
 import { useNavigation } from "@react-navigation/native";
+
+// styles
 import {
   Container,
   InputPhone,
@@ -15,14 +19,14 @@ import {
   Separator15,
 } from "./styles";
 
-//Icons
+// icons
 import CloseRed from "../../../assets/images/CloseRed";
 import Right from "../../../assets/images/Right";
 
-//Components
+// components
 import Button from "../../../components/Button";
 
-//Pages
+// validators
 import { phoneMask } from "../../../utils/inputMask";
 import { isValidPhone } from "../../../utils/validators";
 

@@ -10,6 +10,28 @@
                 "name": "Banana"
             }
         ]
+      },
+      {
+        "id": 2,
+        "name": "Gabrielly",
+        "cpf": "07231913369",
+        "phone": "(88) 99671-9596",
+        "Fruits": [
+            {
+                "name": "Banana"
+            }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Luan",
+        "cpf": "07231913369",
+        "phone": "(88) 99671-9596",
+        "Fruits": [
+            {
+                "name": "Morango"
+            }
+        ]
       }
     ],
     "Fruits": [
@@ -17,7 +39,15 @@
         "id": 1,
         "name": "Banana",
         "price": "2.50",
-        "stock": "75"
+        "stock": "75",
+        "supplier": "Fernanda"
+      },
+      {
+        "id": 2,
+        "name": "Morango",
+        "price": "4.50",
+        "stock": "25",
+        "supplier": "Fernanda"
       }
     ]
   }

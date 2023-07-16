@@ -1,6 +1,10 @@
 import React, {useState} from "react";
 import { FlatList } from "react-native";
+
+// libs
 import { useNavigation } from '@react-navigation/native';
+
+// styles
 import {
   Container,
   Label,
@@ -16,10 +20,13 @@ import {
   FullText,
   ButtonCheckBoxAll,
 } from "./styles";
+
+// icons
 import CloseRed from "../../../assets/images/CloseRed";
 import Right from "../../../assets/images/Right";
-import RedButton from "../../../components/RedButton";
 
+// components
+import RedButton from "../../../components/RedButton";
 import CheckBox from "../../../components/CheckBox";
 
 

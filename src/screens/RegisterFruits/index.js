@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+
+// libs
 import { useNavigation } from "@react-navigation/native";
 import { Picker } from "@react-native-picker/picker";
+
+// styles
 import {
   Container,
   FirstView,
@@ -14,12 +18,14 @@ import {
   ErrorMensage,
 } from "./styles";
 
+//icons
 import Close from "../../assets/images/Close";
 import Apple from "../../assets/images/Apple";
 import Money from "../../assets/images/Money";
 import Coins from "../../assets/images/Coins";
 import PeopleDark from "../../assets/images/PeopleDark";
 
+// components
 import RedButton from "../../components/RedButton";
 
 const DataFruit = [
@@ -164,7 +170,7 @@ export default function RegisterFruits() {
           <PeopleDark error={errorSelectedSupplier} />
         </ContentImage>
       <Picker
-        key={(DataFruit.map((item) => item.key.toString()))}
+        key={(DataFruit.map((item) => item.key.toString() || ''))}
         selectedValue={selectedSupplier}
         onValueChange={(itemValue) => setSelectedSupplier(itemValue)}
         style={{

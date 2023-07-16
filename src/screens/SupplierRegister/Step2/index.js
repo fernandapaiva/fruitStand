@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+
+// libs
 import { useNavigation } from "@react-navigation/native";
 import {
   Container,
@@ -15,14 +17,14 @@ import {
   Separator15,
 } from "./styles";
 
-//Icons
+// icons
 import Right from "../../../assets/images/Right";
 import CloseRed from "../../../assets/images/CloseRed";
 
-//Components
+// components
 import Button from "../../../components/Button";
 
-//Pages
+// validators
 import {cpfMask} from "../../../utils/inputMask"
 import {checkCPF} from "../../../utils/validators";
 

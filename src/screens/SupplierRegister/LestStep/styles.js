@@ -1,8 +1,9 @@
 import styled from "styled-components/native";
+import { colors } from "../../../assets/colors/styles";
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #F0F4F7;
+  background-color: ${colors.Backgroud};
 `;
 
 export const SubContainer = styled.View`
@@ -30,13 +31,13 @@ export const AligningText = styled.View`
 export const Description = styled.Text`
   font-size: 19px;
   font-family: 'Poppins-Medium';
-  color: #212324;
+  color: ${colors.Black};
 `;
 
 export const Information = styled.Text`
   font-size: 15px;
   font-family: 'Poppins-Regular';
-  color: #6C7072;
+  color: ${colors.Gray};
 `;
 
 export const Separator16 = styled.View`

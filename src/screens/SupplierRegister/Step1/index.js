@@ -1,5 +1,9 @@
 import React, {useState} from "react";
+
+// libs
 import { useNavigation } from "@react-navigation/native";
+
+// styles
 import {
   Container,
   InputName,
@@ -13,7 +17,11 @@ import {
   Separator15,
   ErrorMensage
 } from "./styles";
+
+// icons
 import CloseRed from "../../../assets/images/CloseRed";
+
+// components
 import Button from "../../../components/Button";
 
 export default function Step1() {

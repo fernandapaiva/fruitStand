@@ -1,18 +1,19 @@
 import styled from "styled-components/native";
+import { colors } from '../../assets/colors/styles';
 import {Dimensions} from 'react-native';
 
 const {width} = Dimensions.get('window')
 
 export const Content = styled.View`
   flex: 1;
-  background-color: #f0f4f7;
+  background-color: ${colors.Backgroud};
   align-items: center;
   justify-content: center;
 `;
 
 export const TitleRegistration = styled.Text`
   font-size: 16px;
-  color: #212324;
+  color: ${colors.Black};
   align-self: flex-start;
   margin-left: 20px;
   font-family: 'Poppins-Regular';
@@ -26,7 +27,7 @@ export const Separator40 = styled.View`
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #f0f4f7;
+  background-color: ${colors.Backgroud};
 `;
 
 export const Separator24 = styled.View`
@@ -57,34 +58,10 @@ export const Main = styled.View`
   align-items: center;
 `;
 
-export const ViewInput = styled.View`
-  flex-direction: row;
-  width: ${width - 40}px;
-  height: 56px;
-  background-color: #ffffff;
-  border-radius: 8px;
-`;
-
-export const InputSearch = styled.TextInput`
-  width: 80%;
-  height: 56px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  font-size: 15px;
-  color: #363A3C;
-  font-family: 'Poppins-Regular';
-`;
-
-export const ContainerImage = styled.View`
-  width: 20%;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const ContainerInformation = styled.View`
+export const ContainerInformation = styled.TouchableOpacity`
   width: ${width - 40}px;
   height: 120px;
-  background-color: #ffffff;
+  background-color: ${colors.White};
   border-radius: 8px;
   padding: 15px;
 `;
@@ -96,13 +73,13 @@ export const LiningUp = styled.View`
 
 export const DataSupplier = styled.Text`
   font-size: 13px;
-  color: #6c7072;
+  color: ${colors.Gray};
   font-family: 'Poppins-Medium';
 `;
 
 export const NameSupplier = styled.Text`
   font-size: 16px;
-  color: #212324;
+  color: ${colors.DarkGray};
   font-family: 'Poppins-Regular';
 `;
 
@@ -110,7 +87,7 @@ export const ButtonAdd = styled.TouchableOpacity`
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background-color: #DA0D1E;
+  background-color: ${colors.Red};
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -129,7 +106,7 @@ export const FirstView = styled.View`
 
 export const PageTitle = styled.Text`
   font-size: 24px;
-  color: #da0d1e;
+  color: ${colors.Red};
   font-family: 'Poppins-Regular';
 `;
 
@@ -150,13 +127,13 @@ export const AlignContainer = styled.View`
 
 export const TextData = styled.Text`
   font-size: 13px;
-  color: #6c7072;
+  color: ${colors.Gray};
   font-family: 'Poppins-Medium';
 `;
 
 export const TextInformation = styled.Text`
   font-size: 24px;
-  color: #212324;
+  color: ${colors.Black};
   font-family: 'Poppins-Regular';
 `;
 
@@ -167,13 +144,13 @@ export const SubContainer= styled.View`
 
 export const NameFruit = styled.Text`
   font-size: 13px;
-  color: #6c7072;
+  color: ${colors.Gray};
   font-family: 'Poppins-Regular';
 `;
 
 export const TextAbove = styled.Text`
   font-size: 16px;
-  color: #212324;
+  color: ${colors.Black};
   font-family: 'Poppins-Regular';
   margin-left: 20px;
 `;

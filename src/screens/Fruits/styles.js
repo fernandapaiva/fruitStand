@@ -62,31 +62,8 @@ export const Separator16 = styled.View`
   height: 16px;
 `;
 
-export const ViewInput = styled.View`
-  flex-direction: row;
-  width: ${width - 40}px;
-  height: 56px;
-  background-color: ${colors.White};
-  border-radius: 8px;
-`;
 
-export const InputSearch = styled.TextInput`
-  width: 80%;
-  height: 56px;
-  background-color: ${colors.White};
-  border-radius: 8px;
-  font-size: 15px;
-  color: #363A3C;
-  font-family: 'Poppins-Regular';
-`;
-
-export const ContainerImage = styled.View`
-  width: 20%;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const ContainerInformation = styled.View`
+export const ContainerInformation = styled.TouchableOpacity`
   width: ${width - 40}px;
   height: 104px;
   background-color: ${colors.White};

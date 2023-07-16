@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FlatList, KeyboardAvoidingView } from "react-native";
+
+// libs
 import { useNavigation } from "@react-navigation/native";
+
+// styles
 import {
   Container,
   FirstView,
@@ -18,9 +22,6 @@ import {
   TitleRegistration,
   Content,
   SeparatorItens,
-  InputSearch,
-  ViewInput,
-  ContainerImage,
   ContainerInformation,
   Separator24,
   Separator40,
@@ -32,100 +33,71 @@ import {
   Separator8,
   Separator48,
 } from "./styles";
+
+// icons
 import Close from "../../assets/images/Close";
 import Person from "../../assets/images/Person";
-import RedButton from "../../components/RedButton";
 import Call from "../../assets/images/Call";
-//
-import Search from "../../assets/images/Search";
 import Add from "../../assets/images/Add";
 
-const DATA = [
-  {
-    fornecedor: "Lorem ipsum",
-    cpf: "000.000.000-00",
-    telefone: "(00) 0000-0000",
-  },
-  {
-    fornecedor: "Lorem ipsum",
-    cpf: "000.000.000-00",
-    telefone: "(00) 0000-0000",
-  },
-  {
-    fornecedor: "Lorem ipsum",
-    cpf: "000.000.000-00",
-    telefone: "(00) 0000-0000",
-  },
-  {
-    fornecedor: "Lorem ipsum",
-    cpf: "000.000.000-00",
-    telefone: "(00) 0000-0000",
-  },
-  {
-    fornecedor: "Lorem ipsum",
-    cpf: "000.000.000-00",
-    telefone: "(00) 0000-0000",
-  },
-];
+// components
+import RedButton from "../../components/RedButton";
+import LoadingView from "../../components/Loading";
+import SearchList from "../../components/SearchList";
 
-const DataFruit = [
-  {
-    fruta: "Banana",
-  },
-  {
-    fruta: "Maça",
-  },
-  {
-    fruta: "Laranja",
-  },
-  {
-    fruta: "Abacaxi",
-  },
-  {
-    fruta: "Morango",
-  },
-  {
-    fruta: "Manda",
-  },
-  {
-    fruta: "Uva",
-  },
-  {
-    fruta: "Pera",
-  },
-  {
-    fruta: "Kiwi",
-  },
-  {
-    fruta: "Melancia",
-  },
-];
+// hooks
+import { HooksContext } from "../../hooks";
 
 export default function Supplier() {
   const navigation = useNavigation();
+
+  const [suppliersFilter, setSupplierFilter] = useState([]);
+  const [isDetails, setIsDatails] = useState(false);
+
+  const {
+    suppliers,
+    getSuppliers,
+    getSupplierById,
+    supplierId,
+    RegisterSupplier,
+    isLoading,
+  } = useContext(HooksContext);
+
+  useEffect(() => {
+    getSuppliers();
+  }, []);
+
+  useEffect(() => {
+    setSupplierFilter(suppliers);
+  }, [suppliers]);
+
+  const showDatails = (id) => {
+    getSupplierById(id);
+    setIsDatails(true);
+  };
 
   const renderSupplierDetails = () => (
     <>
       <Separator15 />
       <FirstView>
         <PageTitle>Fornecedor</PageTitle>
-        <ButtonClose onPress={() => navigation.navigate("Supplier")}>
+        <ButtonClose onPress={() => setIsDatails(false)}>
           <Close />
         </ButtonClose>
       </FirstView>
       <ColumView>
-        <TextInformation>Lorem Ipsum</TextInformation>
+        <TextInformation>{supplierId.name}</TextInformation>
         <Separator15 />
         <AlignContainer>
           <Person />
           <SeparatorItens />
-          <TextData>000.000.000-00</TextData>
+          <TextData>{supplierId.cpf}</TextData>
         </AlignContainer>
         <Separator15 />
         <AlignContainer>
           <Call />
           <SeparatorItens />
-          <TextData>(00) 00000-0000</TextData>
+          <TextData>{supplierId.phone}</TextData>
         </AlignContainer>
       </ColumView>
       <Separator24 />
@@ -133,10 +105,10 @@ export default function Supplier() {
         <TextAbove>Frutas</TextAbove>
       </>
       <FlatList
-        data={DataFruit}
+        data={supplierId.Fruits}
         renderItem={({ item }) => (
           <SubContainer>
-            <NameFruit> • {item.fruta}</NameFruit>
+            <NameFruit> • {item.name}</NameFruit>
           </SubContainer>
         )}
       />
@@ -158,22 +130,14 @@ export default function Supplier() {
     <>
       <Separator48 />
       <Main>
-        <ViewInput>
-          <ContainerImage>
-            <Search />
-          </ContainerImage>
-          <InputSearch
-            placeholder="Pesquisar Fornecedor"
-            placeholderTextColor="#363A3C"
-          />
-        </ViewInput>
+        <SearchList setData={setSupplierFilter} />
         <Separator24 />
         <FlatList
-          data={DATA}
+          data={suppliersFilter}
           renderItem={({ item }) => (
             <>
-              <ContainerInformation>
-                <NameSupplier>{item.fornecedor}</NameSupplier>
+              <ContainerInformation onPress={() => showDatails(item.id)}>
+                <NameSupplier>{item.name}</NameSupplier>
                 <Separator8 />
                 <LiningUp>
                   <Person />
@@ -184,7 +148,7 @@ export default function Supplier() {
                 <LiningUp>
                   <Call />
                   <SeparatorItens />
-                  <DataSupplier>{item.telefone}</DataSupplier>
+                  <DataSupplier>{item.phone}</DataSupplier>
                 </LiningUp>
               </ContainerInformation>
               <Separator16 />
@@ -204,7 +168,12 @@ export default function Supplier() {
       behavior="height"
       keyboardVerticalOffset={-50}
     >
-      <Container>{renderEmptySupplier()}</Container>
+      {isLoading && <LoadingView />}
+      <Container>
+        {isDetails && renderSupplierDetails()}
+        {suppliers.length > 0 && !isDetails && renderListSupplier()}
+        {suppliers.length === 0 && renderEmptySupplier()}
+      </Container>
     </KeyboardAvoidingView>
   );
 }

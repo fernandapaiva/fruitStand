@@ -29,13 +29,13 @@ export const CloseButton = styled.TouchableOpacity`
 
 export const LayoutOld = styled.Text`
   font-size: 13px;
-  color: #da0d1e;
+  color: ${colors.Red};
   font-family: 'Poppins-Medium';
 
 `;
 
 export const Label = styled.Text`
-  color: #383B3D;
+  color: ${colors.DarkGray};
   font-size: 15px;
   font-family: 'Poppins-Regular';
 `;
@@ -58,7 +58,7 @@ export const ViewButton = styled.View`
 
 export const ErrorMensage = styled.Text`
   font-size: 12px;
-  color: #930000;
+  color: ${colors.RedError};
   font-family: 'Poppins-Regular';
   margin-left: 5px;
 `;

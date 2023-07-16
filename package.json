@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
+    "api": "npx json-server --host 192.168.0.165 --port 3000 db.json",
     "test": "jest"
   },
   "dependencies": {

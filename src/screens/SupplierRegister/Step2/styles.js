@@ -1,8 +1,10 @@
 import styled from "styled-components/native";
+import { colors } from "../../../assets/colors/styles";
+
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #F0F4F7;
+  background-color: ${colors.Backgroud};
   padding-horizontal: 20px;
 `;
 
@@ -35,7 +37,7 @@ export const LayoutOld = styled.Text`
 
 export const LayoutCurrent = styled.Text`
   font-size: 13px;
-  color: #da0d1e;
+  color: ${colors.Red};
   font-family: 'Poppins-Medium';
 `;
 
@@ -48,7 +50,7 @@ export const InputCpf = styled.TextInput`
 `;
 
 export const Label = styled.Text`
-  color: #383B3D;
+  color: ${colors.DarkGray};
   font-size: 15px;
   font-family: 'Poppins-Regular';
 `;
@@ -63,7 +65,7 @@ export const ViewButton = styled.View`
 
 export const ErrorMensage = styled.Text`
   font-size: 12px;
-  color: #930000;
+  color: ${colors.RedError};
   font-family: 'Poppins-Regular';
   margin-left: 5px;
 `;

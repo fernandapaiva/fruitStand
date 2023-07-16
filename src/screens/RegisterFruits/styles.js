@@ -1,11 +1,12 @@
 import styled from "styled-components/native";
+import { colors } from '../../assets/colors/styles';
 import {Dimensions} from 'react-native';
 
 const {width} = Dimensions.get('window')
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #F0F4F7;
+  background-color: ${colors.Backgroud};
   margin-top: 10px;
 `;
 
@@ -18,7 +19,7 @@ export const FirstView = styled.View`
 
 export const PageTitle = styled.Text`
   font-size: 24px;
-  color: #da0d1e;
+  color: ${colors.Red};
   font-family: 'Poppins-Regular';
 `;
 
@@ -28,7 +29,7 @@ export const ViewInput = styled.View`
   width: ${width - 35}px;
   height: 56px;
   flex-direction: row;
-  background-color: #ffffff;
+  background-color: ${colors.Backgroud};
   border-radius: 8px;
   align-self: center;
 `;
@@ -61,7 +62,7 @@ export const ViewButton = styled.View`
 
 export const ErrorMensage = styled.Text`
   font-size: 12px;
-  color: #930000;
+  color: ${colors.RedError};
   font-family: 'Poppins-Regular';
   margin-left: 20px;
   margin-top: 5px;

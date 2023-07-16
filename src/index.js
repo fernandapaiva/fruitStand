@@ -1,7 +1,9 @@
 import * as React from "react";
+import { StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { colors } from "./assets/colors/styles";
 
 /// SCREENS
 import Supplier from "./screens/Supplier";
@@ -11,14 +13,15 @@ import Step2 from "./screens/SupplierRegister/Step2";
 import Step3 from "./screens/SupplierRegister/Step3";
 import Step4 from "./screens/SupplierRegister/Step4";
 import LestStep from "./screens/SupplierRegister/LestStep";
-import RegisterFruits from './screens/RegisterFruits';
-
+import RegisterFruits from "./screens/RegisterFruits";
 
 /// ICONS
 import People from "./assets/images/People";
 import PeopleRed from "./assets/images/PeopleRed";
 import Nutrition from "./assets/images/Nutrition";
 import NutritionRed from "./assets/images/NutritionRed";
+
+import HooksProvider from "./hooks";
 
 const Tab = createBottomTabNavigator();
 
@@ -61,15 +64,18 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="BottomTab" component={BottomTab} />
-        <Stack.Screen name="Step1" component={Step1} />
-        <Stack.Screen name="Step2" component={Step2} />
-        <Stack.Screen name="Step3" component={Step3} />
-        <Stack.Screen name="Step4" component={Step4} />
-        <Stack.Screen name="LestStep" component={LestStep} />
-        <Stack.Screen name="RegisterFruits" component={RegisterFruits} />
-      </Stack.Navigator>
+      <StatusBar backgroundColor={colors.Backgroud} barStyle="dark-content" />
+      <HooksProvider>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="BottomTab" component={BottomTab} />
+          <Stack.Screen name="Step1" component={Step1} />
+          <Stack.Screen name="Step2" component={Step2} />
+          <Stack.Screen name="Step3" component={Step3} />
+          <Stack.Screen name="Step4" component={Step4} />
+          <Stack.Screen name="LestStep" component={LestStep} />
+          <Stack.Screen name="RegisterFruits" component={RegisterFruits} />
+        </Stack.Navigator>
+      </HooksProvider>
     </NavigationContainer>
   );
 }

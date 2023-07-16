@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { FlatList, KeyboardAvoidingView } from "react-native";
+
+// libs
 import { useNavigation } from "@react-navigation/native";
+
+// styles
 import {
   Container,
   Content,
   TitleRegistration,
   Separator40,
   SubContainer,
-  ViewInput,
   Separator48,
-  ContainerImage,
-  InputSearch,
   Separator24,
   Separator16,
   SeparatorItens,
@@ -26,57 +27,57 @@ import {
   AligningData,
 } from "./styles";
 
+// icons
 import Search from "../../assets/images/Search";
 import PeopleSmall from "../../assets/images/PeopleSmall";
-import Cash from '../../assets/images/Cash'
+import Cash from "../../assets/images/Cash";
 import RightContent from "../../assets/images/RightContent";
 import Add from "../../assets/images/Add";
 
+// components
 import RedButton from "../../components/RedButton";
+import LoadingView from "../../components/Loading";
+import SearchList from "../../components/SearchList";
 
-const DATA = [
-    {
-      fruta: "Maça",
-      valor: "R$2,50",
-      estoque: "50 em estoque",
-      fornecedor: "Lorem ipsum dolor sit consectetur",
-    },
-    {
-      fruta: "Banana",
-      valor: "R$1,80",
-      estoque: "75 em estoque",
-      fornecedor: "Lorem ipsum dolor sit consectetur",
-    },
-    {
-      fruta: "Laranja",
-      valor: "R$3,00",
-      estoque: "30 em estoque",
-      fornecedor: "Lorem ipsum dolor sit consectetur",
-    },
-    {
-      fruta: "Abavaxi",
-      valor: "R$5,50",
-      estoque: "20 em estoque",
-      fornecedor: "Lorem ipsum dolor sit consectetur",
-    },
-    {
-      fruta: "Morango",
-      valor: "R$2,50",
-      estoque: "100 em estoque",
-      fornecedor: "Lorem ipsum dolor sit consectetur",
-    },
-  ];
+// hoocks
+import { HooksContext } from "../../hooks";
 
 export default function Fruits() {
   const navigation = useNavigation();
+
+  const [fruitsFilter, setfruitsFilter] = useState([]);
+  const [isEdit, setIsEdit] = useState(false);
+
+  const {
+    fruits,
+    getFruits,
+    updateFruit,
+    RegisterFruit,
+    getFruitById,
+    fruitId,
+    isLoading,
+  } = useContext(HooksContext);
+
+  useEffect(() => {
+    getFruits();
+  }, []);
+
+  useEffect(() => {
+    setfruitsFilter(fruits);
+  }, [fruits]);
+
+  const showEdit = (id) => {
+    getFruitById(id);
+    setIsEdit(true);
+  };
 
   const renderEmptyFruits = () => (
     <Content>
       <TitleRegistration>Cadastre sua primeira fruta</TitleRegistration>
       <Separator40 />
-      <RedButton 
-      onPress={() => navigation.navigate('RegisterFruits')}
-      title="Cadastrar Fruta"
+      <RedButton
+        onPress={() => navigation.navigate("RegisterFruits")}
+        title="Cadastrar Fruta"
       />
     </Content>
   );
@@ -85,47 +86,40 @@ export default function Fruits() {
     <>
       <Separator48 />
       <SubContainer>
-        <ViewInput>
-          <ContainerImage>
-            <Search />
-          </ContainerImage>
-          <InputSearch
-            placeholder="Pesquisar Fruta"
-            placeholderTextColor="#363A3C"
-          />
-        </ViewInput>
+        <SearchList isFruit setData={setfruitsFilter} />
         <Separator24 />
         <FlatList
-          data={DATA}
+          data={fruitsFilter}
           renderItem={({ item }) => (
             <>
-              <ContainerInformation>
+              <ContainerInformation onPress={() => {}}>
                 <LiningUp>
-                <NameFruits>{item.fruta}</NameFruits>
-                <RightContent />
+                  <NameFruits>{item.name}</NameFruits>
+                  <RightContent />
                 </LiningUp>
                 <AligningData>
                   <Cash />
                   <SeparatorItens />
-                  <ValueFruits>{item.valor}</ValueFruits>
+                  <ValueFruits>{item.price}</ValueFruits>
                   <SeparatorData />
-                  <StockFruits>{item.estoque}</StockFruits>
+                  <StockFruits>{item.stock} em estoque</StockFruits>
                 </AligningData>
                 <Separator8 />
                 <AligningData>
-                  <PeopleSmall/>
+                  <PeopleSmall />
                   <SeparatorItens />
-                  <NameSupplier>{item.fornecedor}</NameSupplier>
-                </AligningData>               
+                  <NameSupplier>{item.supplier}</NameSupplier>
+                </AligningData>
               </ContainerInformation>
               <Separator16 />
             </>
           )}
         />
       </SubContainer>
-      <ButtonAdd 
-      onPress={() =>navigation.navigate('RegisterFruits')}
-      activeOpacity={0.6}>
+      <ButtonAdd
+        onPress={() => navigation.navigate("RegisterFruits")}
+        activeOpacity={0.6}
+      >
         <Add />
       </ButtonAdd>
     </>
@@ -137,7 +131,11 @@ export default function Fruits() {
       behavior="height"
       keyboardVerticalOffset={-50}
     >
-      <Container>{renderEmptyFruits()}</Container>
+      {isLoading && <LoadingView />}
+      <Container>
+        {fruits.length === 0 && renderEmptyFruits()}
+        {fruits.length > 0 && renderListFruits()}
+      </Container>
     </KeyboardAvoidingView>
   );
 }

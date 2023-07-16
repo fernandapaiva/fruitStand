@@ -1,8 +1,10 @@
 import styled from "styled-components/native";
+import { colors } from "../../../assets/colors/styles";
+
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #F0F4F7;
+  background-color: ${colors.Backgroud};
   padding-horizontal: 20px;
 `;
 
@@ -29,19 +31,19 @@ export const LiningContent = styled.View`
 
 export const LayoutOld = styled.Text`
   font-size: 13px;
-  color: #212324;
+  color: ${colors.Black};
   font-family: 'Poppins-Medium';
 `;
 
 export const LayoutCurrent = styled.Text`
   font-size: 13px;
-  color: #da0d1e;
+  color: ${colors.Red};
   font-family: 'Poppins-Medium';
 `;
 
 export const Label = styled.Text`
   font-size: 15px;
-  color: #383B3D;
+  color: ${colors.DarkGray};
   font-family: 'Poppins-Regular';
 `;
 
@@ -57,7 +59,7 @@ export const BackgroundFruits = styled.TouchableOpacity`
 
 export const FullText = styled.Text`
   font-size: 16px;
-  color: #212324;
+  color: ${colors.Black};
   font-family: 'Poppins-Regular';
   margin-left: 8px;
 `;
