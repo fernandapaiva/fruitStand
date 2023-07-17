@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 // libs
 import { useNavigation } from "@react-navigation/native";
@@ -6,7 +6,6 @@ import { Picker } from "@react-native-picker/picker";
 
 // styles
 import {
-  Container,
   FirstView,
   PageTitle,
   CloseButton,
@@ -19,69 +18,21 @@ import {
 } from "./styles";
 
 //icons
-import Close from "../../assets/images/Close";
-import Apple from "../../assets/images/Apple";
-import Money from "../../assets/images/Money";
-import Coins from "../../assets/images/Coins";
-import PeopleDark from "../../assets/images/PeopleDark";
+import Close from "../../../assets/images/Close";
+import Apple from "../../../assets/images/Apple";
+import Money from "../../../assets/images/Money";
+import Coins from "../../../assets/images/Coins";
+import PeopleDark from "../../../assets/images/PeopleDark";
 
 // components
-import RedButton from "../../components/RedButton";
+import RedButton from "../../../components/RedButton";
 
-const DataFruit = [
-  {
-    label: "Banana",
-    value: "Banana",
-    key: 0,
-  },
-  {
-    label: "Maça",
-    value: "Maça",
-    key: 1,
-  },
-  {
-    label: "Laranja",
-    value: "Laranja",
-    key: 2,
-  },
-  {
-    label: "Abacaxi",
-    value: "Abacaxi",
-    key: 3,
-  },
-  {
-    label: "Morango",
-    value: "Morango",
-    key: 4,
-  },
-  {
-    label: "Manga",
-    value: "Manga",
-    key: 5,
-  },
-  {
-    label: "Uva",
-    value: "Uva",
-    key: 6,
-  },
-  {
-    label: "Pera",
-    value: "Pera",
-    key: 7,
-  },
-  {
-    label: "Kiwi",
-    value: "Kiwi",
-    key: 8,
-  },
-  {
-    label: "Melancia",
-    value: "Melancia",
-    key: 9,
-  },
-];
+// hoocks
+import { HooksContext } from "../../../hooks";
 
-export default function RegisterFruits() {
+
+export default function RegisterFruits({onCloseRegister, isEdit}) {
+  const navigation = useNavigation();
 
   const [nameFruit, setNameFruit] = useState("");
   const [price, setPrice] = useState("");
@@ -92,23 +43,66 @@ export default function RegisterFruits() {
   const [selectedSupplier, setSelectedSupplier] = useState('');
   const [errorSelectedSupplier, setErrorSelectedSupplier] = useState(false);
 
-  const navigation = useNavigation();
+  const {
+    RegisterFruit,
+    suppliers,
+    isLoading,
+    updateFruit,
+    fruitId,
+  } = useContext(HooksContext);
 
-  const onPress = () => {
+  useEffect(() => {
+    if(isEdit) {
+      setNameFruit(fruitId.name)
+      setPrice(fruitId.price)
+      setStock(fruitId.stock)
+      setSelectedSupplier(fruitId.supplier)
+    }
+  }, [fruitId])
+
+  const onRegisterSucess = (fruit) => {
+    onCloseRegister()
+    navigation.navigate('ResgistrationSuccess', {fruit})
+  }
+
+
+  const onPressRegister = () => {
     setErrorFruit(!nameFruit);
     setErrorPrice(!price);
     setErrorStock(!stock);
     setErrorSelectedSupplier(!selectedSupplier)
+    if (price && stock && selectedSupplier) {
+      const data = {
+        name: nameFruit,
+        price: price,
+        stock: stock,
+        supplier: selectedSupplier,
+      }
+      RegisterFruit(data);
+      !isLoading && onRegisterSucess()
+    }
+  };
+
+  const onPressEdit = () => {
+    setErrorPrice(!price);
+    setErrorStock(!stock);
+    setErrorSelectedSupplier(!selectedSupplier)
     if (nameFruit && price && stock && selectedSupplier) {
-      navigation.navigate("Fruits");
+      const data = {
+        price: price,
+        stock: stock,
+        supplier: selectedSupplier,
+      }
+      updateFruit(data, fruitId.id);
+      !isLoading && onCloseRegister();
     }
   };
 
   return (
-    <Container>
+    <>
       <FirstView>
-        <PageTitle>Cadastrar Fruta</PageTitle>
-        <CloseButton onPress={() => navigation.navigate("Fruits")}>
+        <PageTitle>{isEdit ? 'Editar Fruta' : 'Cadastrar Fruta'}</PageTitle>
+        <CloseButton onPress={() => onCloseRegister()}>
           <Close />
         </CloseButton>
       </FirstView>
@@ -125,6 +119,7 @@ export default function RegisterFruits() {
             setNameFruit(text);
           }}
           errorFruit={errorFruit}
+          editable={!isEdit}
         />
       </ViewInput>
       {errorFruit && <ErrorMensage>Campo obrigatório*</ErrorMensage>}
@@ -170,9 +165,12 @@ export default function RegisterFruits() {
           <PeopleDark error={errorSelectedSupplier} />
         </ContentImage>
       <Picker
-        key={(DataFruit.map((item) => item.key.toString() || ''))}
+        key={(suppliers.map((item) => item.id.toString() || ''))}
         selectedValue={selectedSupplier}
-        onValueChange={(itemValue) => setSelectedSupplier(itemValue)}
+        onValueChange={(itemValue) => {
+          setErrorSelectedSupplier(!itemValue);
+          setSelectedSupplier(itemValue);
+        }}
         style={{
           flex: 1,
           color: errorSelectedSupplier ? "#930000" : "#6C7072",
@@ -181,19 +179,19 @@ export default function RegisterFruits() {
         }}
       >
         <Picker.Item  label='Fornecedor' value='' style={{fontSize: 15, fontFamily: 'Poppins-Regular'}} />
-        {DataFruit.map((item) => (
-          <Picker.Item  label={item?.label} value={item?.value} style={{fontSize: 15, fontFamily: 'Poppins-Regular'}} />
+        {suppliers.map((item) => (
+          <Picker.Item  label={item?.name} value={item?.name} style={{fontSize: 15, fontFamily: 'Poppins-Regular'}} />
         ))}
       </Picker>
       </ViewInput>
       {errorSelectedSupplier && <ErrorMensage>Campo obrigatório*</ErrorMensage>}
       <ViewButton>
         <RedButton
-          onPress={() => onPress()}
-          title="Cadastrar Fruta"
+          onPress={() => {isEdit ? onPressEdit() : onPressRegister()}}
+          title={isEdit ? "Atualizar fruta" : "Cadastrar Fruta"}
           Icon={false}
         />
       </ViewButton>
-    </Container>
+    </>
   );
 }

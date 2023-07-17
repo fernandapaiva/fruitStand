@@ -1,14 +1,8 @@
 import styled from "styled-components/native";
-import { colors } from '../../assets/colors/styles';
+import { colors } from '../../../assets/colors/styles';
 import {Dimensions} from 'react-native';
 
 const {width} = Dimensions.get('window')
-
-export const Container = styled.View`
-  flex: 1;
-  background-color: ${colors.Backgroud};
-  margin-top: 10px;
-`;
 
 export const FirstView = styled.View`
   flex-direction: row;
@@ -29,7 +23,7 @@ export const ViewInput = styled.View`
   width: ${width - 35}px;
   height: 56px;
   flex-direction: row;
-  background-color: ${colors.Backgroud};
+  background-color: ${colors.White};
   border-radius: 8px;
   align-self: center;
 `;
@@ -54,8 +48,8 @@ export const Separator16 = styled.View`
 
 export const ViewButton = styled.View`
   width: 100%;
-  bottom: 40px;
-  left: 10px;
+  bottom: 20px;
+  left: 12px;
   right: 0;
   position: absolute;
 `;

@@ -14,9 +14,14 @@ import {
   TitleAlertRed,
 } from "./styles";
 
-export default function ModalCancelFruit() {
+export default function ModalCancelFruit(visible, setVisible, onPress) {
   return (
-    <Modal animationType="fade" transparent>
+    <Modal 
+    animationType="fade" 
+    transparent
+    visible={visible}
+    onRequestClose={() => setVisible(false)}
+    >
       <Container>
         <ContainerInside>
           <ContainerSeparator>
@@ -28,10 +33,10 @@ export default function ModalCancelFruit() {
             </Description>
           </ContainerSeparator>
           <AlertButtons>
-            <Button>
+            <Button onPress={() => setVisible(false)}>
               <TitleAlertRed>Não</TitleAlertRed>
             </Button>
-            <ButtonRed>
+            <ButtonRed onPress={() => onPress()}>
               <TitleAlerWhite>Sim, Excluir</TitleAlerWhite>
             </ButtonRed>
           </AlertButtons>

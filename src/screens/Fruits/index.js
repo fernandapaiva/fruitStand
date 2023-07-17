@@ -38,24 +38,32 @@ import Add from "../../assets/images/Add";
 import RedButton from "../../components/RedButton";
 import LoadingView from "../../components/Loading";
 import SearchList from "../../components/SearchList";
+import ModalEdit from "../../components/ModalEdit";
+import ModalCancelFruit from "../../components/ModalCancelFruit";
 
 // hoocks
 import { HooksContext } from "../../hooks";
+
+// Pages
+import RegisterFruits from "./RegisterFruits";
 
 export default function Fruits() {
   const navigation = useNavigation();
 
   const [fruitsFilter, setfruitsFilter] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
+  const [isNewFruit, setIsNewFruit] = useState(false);
+
+  const [visible, setVisible] = useState(false);
+  const [itemId, setItemId] = useState('');
+  const [visibleDelete, setVisibleDelete] = useState(false);
 
   const {
     fruits,
     getFruits,
-    updateFruit,
-    RegisterFruit,
     getFruitById,
-    fruitId,
     isLoading,
+    removeFruit,
   } = useContext(HooksContext);
 
   useEffect(() => {
@@ -66,17 +74,38 @@ export default function Fruits() {
     setfruitsFilter(fruits);
   }, [fruits]);
 
-  const showEdit = (id) => {
-    getFruitById(id);
-    setIsEdit(true);
+  const showNewFruit = () => {
+    setIsNewFruit(true);
   };
+
+
+  const onPressEdit = () => {
+    getFruitById(itemId);
+    setVisible(false)
+    setIsEdit(true)
+  }
+
+  const onPressCancel = () => {
+    setVisible(false)
+    setVisibleDelete(true);
+  }
+
+  const onCloseRegister = () => {
+    setIsEdit(false)
+    setIsNewFruit(false)
+  }
+
+  const onPressDeleteFruit = () => {
+    removeFruit(itemId)
+    setVisibleDelete(false)
+  }
 
   const renderEmptyFruits = () => (
     <Content>
       <TitleRegistration>Cadastre sua primeira fruta</TitleRegistration>
       <Separator40 />
       <RedButton
-        onPress={() => navigation.navigate("RegisterFruits")}
+        onPress={() => showNewFruit()}
         title="Cadastrar Fruta"
       />
     </Content>
@@ -92,7 +121,12 @@ export default function Fruits() {
           data={fruitsFilter}
           renderItem={({ item }) => (
             <>
-              <ContainerInformation onPress={() => {}}>
+              <ContainerInformation
+                onPress={() => {
+                  setItemId(item.id)
+                  setVisible(true);
+                }}
+              >
                 <LiningUp>
                   <NameFruits>{item.name}</NameFruits>
                   <RightContent />
@@ -117,7 +151,7 @@ export default function Fruits() {
         />
       </SubContainer>
       <ButtonAdd
-        onPress={() => navigation.navigate("RegisterFruits")}
+        onPress={() => showNewFruit()}
         activeOpacity={0.6}
       >
         <Add />
@@ -126,16 +160,21 @@ export default function Fruits() {
   );
 
   return (
-    <KeyboardAvoidingView
-      style={{ flex: 1 }}
-      behavior="height"
-      keyboardVerticalOffset={-50}
-    >
-      {isLoading && <LoadingView />}
-      <Container>
-        {fruits.length === 0 && renderEmptyFruits()}
-        {fruits.length > 0 && renderListFruits()}
-      </Container>
-    </KeyboardAvoidingView>
+    <>
+      <ModalEdit visible={visible} setVisible={setVisible}  onPressEdit={onPressEdit} onPressCancel={onPressCancel}/>
+      <ModalCancelFruit visible={visibleDelete} setVisible={setVisibleDelete} onPress={onPressDeleteFruit}/>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior="height"
+        keyboardVerticalOffset={-60}
+      >
+        {isLoading && <LoadingView />}
+        <Container>
+          {fruits.length === 0 && (!isEdit && !isNewFruit) && renderEmptyFruits()}
+          {(fruits.length > 0 && (!isEdit && !isNewFruit)) && renderListFruits()}
+          {(isNewFruit || isEdit) && (<RegisterFruits onCloseRegister={onCloseRegister} isEdit={isEdit}/>)}
+        </Container>
+      </KeyboardAvoidingView>
+    </>
   );
 }

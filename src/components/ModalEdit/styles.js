@@ -5,18 +5,18 @@ import { colors } from '../../assets/colors/styles';
 export const Container = styled.View`
   flex: 1;
   background-color: ${colors.Black};
-  opacity: 0.92;
+  opacity: 0.87;
   justify-content: flex-end;
 `;
 
 export const SubContainer = styled.View`
   width: 100%;
-  height: 120px;
-  background-color: ${colors.Backgroud};
+  height: 140px;
+  background-color: #F0F4F7;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   justify-content: center;
-  padding: 20px;
+  padding-horizontal: 15px;
 `;
 
 export const ButtonModal =styled.TouchableOpacity`

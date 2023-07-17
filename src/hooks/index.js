@@ -51,7 +51,6 @@ const HooksProvider = ({ children }) => {
       .finally(() => setIsLoading(false));
   }
 
-
   // Essa função edita uma fruta
   function updateFruit(data, id) {
     setIsLoading(true);
@@ -76,14 +75,25 @@ const HooksProvider = ({ children }) => {
       .finally(() => setIsLoading(false));
   }
 
-
   // Essa função registra uma fruta
   function RegisterFruit(data) {
     setIsLoading(true);
     api
       .post("/Fruits", data)
       .then((resp) => {
-        if (resp.data) getSuppliers();
+        if (resp.data) getFruits();
+      })
+      .catch((error) => error)
+      .finally(() => setIsLoading(false));
+  }
+
+  // Essa função remove uma fruta
+  function removeFruit(id) {
+    setIsLoading(true);
+    api
+      .delete(`/Fruits/${id}`)
+      .then((resp) => {
+        if (resp.data) getFruits();
       })
       .catch((error) => error)
       .finally(() => setIsLoading(false));
@@ -104,6 +114,7 @@ const HooksProvider = ({ children }) => {
         getFruitById,
         supplierId,
         fruitId,
+        removeFruit,
       }}
     >
       {children}
