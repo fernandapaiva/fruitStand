@@ -1,35 +1,39 @@
 [
     {
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "com.fruitstand.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "com.fruitstand.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.fruitstand.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.fruitstand.app-main-33:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.fruitstand.app-merged_res-31:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.fruitstand.app-main-33:/mipmap-xhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "com.fruitstand.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.fruitstand.app-main-33:/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "com.fruitstand.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.fruitstand.app-main-33:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/mipmap-xhdpi/ic_launcher.png"
     },
     {
         "merged": "com.fruitstand.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "com.fruitstand.app-main-33:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "com.fruitstand.app-merged_res-31:/mipmap-hdpi_ic_launcher.png.flat",
         "source": "com.fruitstand.app-main-33:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.fruitstand.app-merged_res-31:/drawable_rn_edit_text_material.xml.flat",
-        "source": "com.fruitstand.app-main-33:/drawable/rn_edit_text_material.xml"
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/drawable_rn_edit_text_material.xml.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/mipmap-mdpi/ic_launcher.png"
     },
     {
         "merged": "com.fruitstand.app-merged_res-31:/mipmap-mdpi_ic_launcher.png.flat",
@@ -42,5 +46,41 @@
     {
         "merged": "com.fruitstand.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "com.fruitstand.app-main-33:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.fruitstand.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.fruitstand.app-main-33:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.fruitstand.app-merged_res-31:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.fruitstand.app-main-33:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.fruitstand.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.fruitstand.app-main-33:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.fruitstand.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.fruitstand.app-main-33:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/fernanda/.gradle/daemon/8.0.1/com.fruitstand.app-main-33:/mipmap-mdpi/ic_launcher_round.png"
     }
 ]
