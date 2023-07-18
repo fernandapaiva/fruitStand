@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
-import { colors } from '../../../assets/colors/styles';
-import {Dimensions} from 'react-native';
+import { colors } from "../../../assets/colors/styles";
+import { Dimensions } from "react-native";
 
-const {width} = Dimensions.get('window')
+const { width } = Dimensions.get("window");
 
 export const FirstView = styled.View`
   flex-direction: row;
@@ -14,7 +14,7 @@ export const FirstView = styled.View`
 export const PageTitle = styled.Text`
   font-size: 24px;
   color: ${colors.Red};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
 export const CloseButton = styled.TouchableOpacity``;
@@ -37,14 +37,16 @@ export const ContentImage = styled.View`
 export const Input = styled.TextInput`
   width: 85%;
   font-size: 15px;
-  color: ${props => (props.errorFruit || props.errorPrice || props.errorStock) ? "#930000" : "#6C7072"};
-  font-family: 'Poppins-Regular';
+  color: ${(props) =>
+    props.errorFruit || props.errorPrice || props.errorStock
+      ? "#930000"
+      : "#6C7072"};
+  font-family: "Poppins-Regular";
 `;
 
 export const Separator16 = styled.View`
   height: 16px;
 `;
-
 
 export const ViewButton = styled.View`
   width: 100%;
@@ -57,7 +59,7 @@ export const ViewButton = styled.View`
 export const ErrorMensage = styled.Text`
   font-size: 12px;
   color: ${colors.RedError};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
   margin-left: 20px;
   margin-top: 5px;
 `;

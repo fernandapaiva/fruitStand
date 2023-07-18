@@ -30,13 +30,13 @@ export const AligningText = styled.View`
 
 export const Description = styled.Text`
   font-size: 19px;
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
   color: ${colors.Black};
 `;
 
 export const Information = styled.Text`
   font-size: 15px;
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
   color: ${colors.Gray};
 `;
 
@@ -45,7 +45,7 @@ export const Separator16 = styled.View`
 `;
 
 export const ViewButton = styled.View`
-   width: 100%;
+  width: 100%;
   bottom: 40px;
   left: 10px;
   right: 0;

@@ -127,7 +127,7 @@ export default function Step4({ route }) {
       };
       RegisterSupplier(data);
     }
-    !isLoading && navigation.navigate("LestStep", {name: params?.name});
+    !isLoading && navigation.navigate("LestStep", { name: params?.name });
   };
 
   const onPressModal = () => {

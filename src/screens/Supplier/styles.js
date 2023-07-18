@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
-import { colors } from '../../assets/colors/styles';
-import {Dimensions} from 'react-native';
+import { colors } from "../../assets/colors/styles";
+import { Dimensions } from "react-native";
 
-const {width} = Dimensions.get('window')
+const { width } = Dimensions.get("window");
 
 export const Content = styled.View`
   flex: 1;
@@ -16,7 +16,7 @@ export const TitleRegistration = styled.Text`
   color: ${colors.Black};
   align-self: flex-start;
   margin-left: 20px;
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
 export const Separator40 = styled.View`
@@ -74,13 +74,13 @@ export const LiningUp = styled.View`
 export const DataSupplier = styled.Text`
   font-size: 13px;
   color: ${colors.Gray};
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
 `;
 
 export const NameSupplier = styled.Text`
   font-size: 16px;
   color: ${colors.DarkGray};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
 export const ButtonAdd = styled.TouchableOpacity`
@@ -91,8 +91,8 @@ export const ButtonAdd = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 15px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
 `;
 
 /////////////////////////////////////////////////
@@ -107,7 +107,7 @@ export const FirstView = styled.View`
 export const PageTitle = styled.Text`
   font-size: 24px;
   color: ${colors.Red};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
 export const ButtonClose = styled.TouchableOpacity``;
@@ -118,26 +118,26 @@ export const Separator28 = styled.View`
 
 export const ColumView = styled.View`
   margin-left: 20px;
-`
+`;
 
 export const AlignContainer = styled.View`
   flex-direction: row;
   align-items: center;
-`
+`;
 
 export const TextData = styled.Text`
   font-size: 13px;
   color: ${colors.Gray};
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
 `;
 
 export const TextInformation = styled.Text`
   font-size: 24px;
   color: ${colors.Black};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
-export const SubContainer= styled.View`
+export const SubContainer = styled.View`
   margin-left: 15px;
   padding: 5px;
 `;
@@ -145,12 +145,12 @@ export const SubContainer= styled.View`
 export const NameFruit = styled.Text`
   font-size: 13px;
   color: ${colors.Gray};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
 export const TextAbove = styled.Text`
   font-size: 16px;
   color: ${colors.Black};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
   margin-left: 20px;
 `;

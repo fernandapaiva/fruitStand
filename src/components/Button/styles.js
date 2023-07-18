@@ -1,12 +1,12 @@
 import styled from "styled-components/native";
-import {Dimensions} from 'react-native';
-import { colors } from '../../assets/colors/styles';
+import { Dimensions } from "react-native";
+import { colors } from "../../assets/colors/styles";
 
-const {width} = Dimensions.get('window')
+const { width } = Dimensions.get("window");
 
 export const ButtonRegister = styled.TouchableOpacity`
   width: ${width - 30}px;
-  height:40px;
+  height: 40px;
   background-color: ${colors.Backgroud};
   border-width: 1px;
   border-color: ${colors.Red};
@@ -23,5 +23,5 @@ export const SepatorItem = styled.View`
 export const TitleButton = styled.Text`
   font-size: 13px;
   color: ${colors.Red};
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
 `;

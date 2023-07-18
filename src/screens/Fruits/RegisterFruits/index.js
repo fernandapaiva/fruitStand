@@ -27,7 +27,7 @@ import PeopleDark from "../../../assets/images/PeopleDark";
 // components
 import RedButton from "../../../components/RedButton";
 
-// hoocks
+// hooks
 import { HooksContext } from "../../../hooks";
 
 export default function RegisterFruits({ onCloseRegister, isEdit }) {
@@ -40,7 +40,6 @@ export default function RegisterFruits({ onCloseRegister, isEdit }) {
   const [errorPrice, setErrorPrice] = useState(false);
   const [errorStock, setErrorStock] = useState(false);
   const [selectedSupplier, setSelectedSupplier] = useState("");
-  const [errorSelectedSupplier, setErrorSelectedSupplier] = useState(false);
 
   const { RegisterFruit, suppliers, isLoading, updateFruit, fruitId } =
     useContext(HooksContext);
@@ -54,17 +53,18 @@ export default function RegisterFruits({ onCloseRegister, isEdit }) {
     }
   }, [fruitId]);
 
+  //Essa constante faz a navegação da tela através da onCloseRegister
   const onRegisterSucess = (fruit) => {
     onCloseRegister();
     navigation.navigate("ResgistrationSuccess", { fruit });
   };
 
+  // Essa função registra uma fruta na lista.
   const onPressRegister = () => {
     setErrorFruit(!nameFruit);
     setErrorPrice(!price);
     setErrorStock(!stock);
-    setErrorSelectedSupplier(!selectedSupplier);
-    if (price && stock && selectedSupplier) {
+    if (nameFruit && price && stock) {
       const data = {
         name: nameFruit,
         price: price,
@@ -72,15 +72,15 @@ export default function RegisterFruits({ onCloseRegister, isEdit }) {
         supplier: selectedSupplier,
       };
       RegisterFruit(data);
-      !isLoading && onRegisterSucess();
+      !isLoading && onRegisterSucess(nameFruit);
     }
   };
 
+  // Essa função atualiza item fruta na lista
   const onPressEdit = () => {
     setErrorPrice(!price);
     setErrorStock(!stock);
-    setErrorSelectedSupplier(!selectedSupplier);
-    if (nameFruit && price && stock && selectedSupplier) {
+    if (price && stock) {
       const data = {
         price: price,
         stock: stock,
@@ -155,17 +155,16 @@ export default function RegisterFruits({ onCloseRegister, isEdit }) {
       <Separator16 />
       <ViewInput>
         <ContentImage>
-          <PeopleDark error={errorSelectedSupplier} />
+          <PeopleDark />
         </ContentImage>
         <Picker
           selectedValue={selectedSupplier}
           onValueChange={(itemValue) => {
-            setErrorSelectedSupplier(!itemValue);
             setSelectedSupplier(itemValue);
           }}
           style={{
             flex: 1,
-            color: errorSelectedSupplier ? "#930000" : "#6C7072",
+            color:"#6C7072",
             marginLeft: -12,
             fontFamily: "Poppins-Regular",
           }}
@@ -186,7 +185,6 @@ export default function RegisterFruits({ onCloseRegister, isEdit }) {
           ))}
         </Picker>
       </ViewInput>
-      {errorSelectedSupplier && <ErrorMensage>Campo obrigatório*</ErrorMensage>}
       <ViewButton>
         <RedButton
           onPress={() => {

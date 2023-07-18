@@ -1,7 +1,6 @@
 import styled from "styled-components/native";
 import { colors } from "../../../assets/colors/styles";
 
-
 export const Container = styled.View`
   flex: 1;
   background-color: ${colors.Backgroud};
@@ -32,19 +31,19 @@ export const LiningContent = styled.View`
 export const LayoutOld = styled.Text`
   font-size: 13px;
   color: ${colors.Black};
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
 `;
 
 export const LayoutCurrent = styled.Text`
   font-size: 13px;
   color: ${colors.Red};
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
 `;
 
 export const Label = styled.Text`
   font-size: 15px;
   color: ${colors.DarkGray};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
 export const ButtonCheckBoxAll = styled.TouchableOpacity`
@@ -60,7 +59,7 @@ export const BackgroundFruits = styled.TouchableOpacity`
 export const FullText = styled.Text`
   font-size: 16px;
   color: ${colors.Black};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
   margin-left: 8px;
 `;
 

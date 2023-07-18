@@ -40,7 +40,7 @@ import SearchList from "../../components/SearchList";
 import ModalEdit from "../../components/ModalEdit";
 import ModalCancelFruit from "../../components/ModalCancelFruit";
 
-// hoocks
+// hooks
 import { HooksContext } from "../../hooks";
 
 // Pages
@@ -54,16 +54,11 @@ export default function Fruits() {
   const [isNewFruit, setIsNewFruit] = useState(false);
 
   const [visible, setVisible] = useState(false);
-  const [itemId, setItemId] = useState('');
+  const [itemId, setItemId] = useState("");
   const [visibleDelete, setVisibleDelete] = useState(false);
 
-  const {
-    fruits,
-    getFruits,
-    getFruitById,
-    isLoading,
-    removeFruit,
-  } = useContext(HooksContext);
+  const { fruits, getFruits, getFruitById, isLoading, removeFruit } =
+    useContext(HooksContext);
 
   useEffect(() => {
     getFruits();
@@ -73,40 +68,41 @@ export default function Fruits() {
     setfruitsFilter(fruits);
   }, [fruits]);
 
+  // Essa constante é utilizida para iniciar o cadastro de frutas
   const showNewFruit = () => {
     setIsNewFruit(true);
   };
 
-
+  // Essa constante permite a edição da fruta já cadastrada
   const onPressEdit = () => {
     getFruitById(itemId);
-    setVisible(false)
-    setIsEdit(true)
-  }
+    setVisible(false);
+    setIsEdit(true);
+  };
 
+  // Essa constante exclui uma fruta já casdatrada
   const onPressCancel = () => {
-    setVisible(false)
+    setVisible(false);
     setVisibleDelete(true);
-  }
+  };
 
+  // Essa constante é chamada para interromper o fluxo de cadastro ou edição de uma fruta
   const onCloseRegister = () => {
-    setIsEdit(false)
-    setIsNewFruit(false)
-  }
+    setIsEdit(false);
+    setIsNewFruit(false);
+  };
 
+  // Essa constante é chamada para excluir uma fruta da lista
   const onPressDeleteFruit = () => {
-    removeFruit(itemId)
-    setVisibleDelete(false)
-  }
+    removeFruit(itemId);
+    setVisibleDelete(false);
+  };
 
   const renderEmptyFruits = () => (
     <Content>
       <TitleRegistration>Cadastre sua primeira fruta</TitleRegistration>
       <Separator40 />
-      <RedButton
-        onPress={() => showNewFruit()}
-        title="Cadastrar Fruta"
-      />
+      <RedButton onPress={() => showNewFruit()} title="Cadastrar Fruta" />
     </Content>
   );
 
@@ -122,7 +118,7 @@ export default function Fruits() {
             <>
               <ContainerInformation
                 onPress={() => {
-                  setItemId(item.id)
+                  setItemId(item.id);
                   setVisible(true);
                 }}
               >
@@ -149,10 +145,7 @@ export default function Fruits() {
           )}
         />
       </SubContainer>
-      <ButtonAdd
-        onPress={() => showNewFruit()}
-        activeOpacity={0.6}
-      >
+      <ButtonAdd onPress={() => showNewFruit()} activeOpacity={0.6}>
         <Add />
       </ButtonAdd>
     </>
@@ -160,8 +153,17 @@ export default function Fruits() {
 
   return (
     <>
-      <ModalEdit visible={visible} setVisible={setVisible}  onPressEdit={onPressEdit} onPressCancel={onPressCancel}/>
-      <ModalCancelFruit visible={visibleDelete} setVisible={setVisibleDelete} onPress={onPressDeleteFruit}/>
+      <ModalEdit
+        visible={visible}
+        setVisible={setVisible}
+        onPressEdit={onPressEdit}
+        onPressCancel={onPressCancel}
+      />
+      <ModalCancelFruit
+        visible={visibleDelete}
+        setVisible={setVisibleDelete}
+        onPress={onPressDeleteFruit}
+      />
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior="height"
@@ -169,9 +171,11 @@ export default function Fruits() {
       >
         {isLoading && <LoadingView />}
         <Container>
-          {fruits.length === 0 && (!isEdit && !isNewFruit) && renderEmptyFruits()}
-          {(fruits.length > 0 && (!isEdit && !isNewFruit)) && renderListFruits()}
-          {(isNewFruit || isEdit) && (<RegisterFruits onCloseRegister={onCloseRegister} isEdit={isEdit}/>)}
+          {fruits.length === 0 && !isEdit && !isNewFruit && renderEmptyFruits()}
+          {fruits.length > 0 && !isEdit && !isNewFruit && renderListFruits()}
+          {(isNewFruit || isEdit) && (
+            <RegisterFruits onCloseRegister={onCloseRegister} isEdit={isEdit} />
+          )}
         </Container>
       </KeyboardAvoidingView>
     </>

@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
-import { colors } from '../../assets/colors/styles';
-import {Dimensions} from 'react-native';
+import { colors } from "../../assets/colors/styles";
+import { Dimensions } from "react-native";
 
-const {width} = Dimensions.get('window')
+const { width } = Dimensions.get("window");
 
 export const Container = styled.View`
   flex: 1;
@@ -21,7 +21,7 @@ export const TitleRegistration = styled.Text`
   color: ${colors.Black};
   align-self: flex-start;
   margin-left: 20px;
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
 export const Separator40 = styled.View`
@@ -62,7 +62,6 @@ export const Separator16 = styled.View`
   height: 16px;
 `;
 
-
 export const ContainerInformation = styled.TouchableOpacity`
   width: ${width - 40}px;
   height: 104px;
@@ -84,27 +83,26 @@ export const AligningData = styled.View`
 export const NameSupplier = styled.Text`
   font-size: 13px;
   color: #6c7072;
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
 `;
 
 export const ValueFruits = styled.Text`
   font-size: 12px;
   color: ${colors.Green};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
 export const StockFruits = styled.Text`
   font-size: 12px;
   color: #6c7072;
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
 export const NameFruits = styled.Text`
   font-size: 16px;
   color: ${colors.Black};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
-
 
 export const ButtonAdd = styled.TouchableOpacity`
   width: 56px;

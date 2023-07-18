@@ -30,22 +30,21 @@ export const CloseButton = styled.TouchableOpacity`
 export const LayoutOld = styled.Text`
   font-size: 13px;
   color: ${colors.Red};
-  font-family: 'Poppins-Medium';
-
+  font-family: "Poppins-Medium";
 `;
 
 export const Label = styled.Text`
   color: ${colors.DarkGray};
   font-size: 15px;
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
 `;
 
 export const InputName = styled.TextInput`
   width: 80%;
   min-height: 24px;
   font-size: 24px;
-  color: ${props => props.errorName ? "#930000" : "#6C7072"};
-  font-family: 'Poppins-Regular';
+  color: ${(props) => (props.errorName ? "#930000" : "#6C7072")};
+  font-family: "Poppins-Regular";
 `;
 
 export const ViewButton = styled.View`
@@ -59,6 +58,6 @@ export const ViewButton = styled.View`
 export const ErrorMensage = styled.Text`
   font-size: 12px;
   color: ${colors.RedError};
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
   margin-left: 5px;
 `;

@@ -1,9 +1,9 @@
-import React from 'react';
-import {ActivityIndicator, StatusBar, Dimensions} from 'react-native';
+import React from "react";
+import { ActivityIndicator, StatusBar, Dimensions } from "react-native";
 
-import {Container} from './styles';
+import { Container } from "./styles";
 
-const {height} = Dimensions.get('window');
+const { height } = Dimensions.get("window");
 
 const LoadingView = () => {
   return (

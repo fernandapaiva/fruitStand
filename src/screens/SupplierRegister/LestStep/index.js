@@ -24,8 +24,7 @@ import Register from "../../../assets/images/Register";
 // components
 import RedButton from "../../../components/RedButton";
 
-export default function LestStep({route}) {
-
+export default function LestStep({ route }) {
   const params = route?.params;
 
   const navigation = useNavigation();
@@ -43,7 +42,9 @@ export default function LestStep({route}) {
       <AligningText>
         <Description>Fornecedor cadastrado</Description>
         <Separator16 />
-        <Information>Você cadastrou o fornecedor {params.name} com sucesso!</Information>
+        <Information>
+          Você cadastrou o fornecedor {params.name} com sucesso!
+        </Information>
       </AligningText>
       <ViewButton>
         <RedButton

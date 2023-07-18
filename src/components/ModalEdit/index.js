@@ -23,7 +23,7 @@ export default function ModalEdit({
       transparent
       visible={visible}
       onRequestClose={() => setVisible(false)}
-      style={{flex: 1}}
+      style={{ flex: 1 }}
     >
       <Container>
         <SubContainer>

@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
 export const Container = styled.View`
   background-color: black;
@@ -6,7 +6,7 @@ export const Container = styled.View`
   left: 0;
   right: 0;
   bottom: 0;
-  height: ${({height}) => height}px;
+  height: ${({ height }) => height}px;
   z-index: 999;
   elevation: 999;
   position: absolute;

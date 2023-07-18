@@ -54,13 +54,8 @@ export default function Supplier() {
   const [suppliersFilter, setSupplierFilter] = useState([]);
   const [isDetails, setIsDatails] = useState(false);
 
-  const {
-    suppliers,
-    getSuppliers,
-    getSupplierById,
-    supplierId,
-    isLoading,
-  } = useContext(HooksContext);
+  const { suppliers, getSuppliers, getSupplierById, supplierId, isLoading } =
+    useContext(HooksContext);
 
   useEffect(() => {
     getSuppliers();
@@ -70,7 +65,7 @@ export default function Supplier() {
     setSupplierFilter(suppliers);
   }, [suppliers]);
 
-  const showDatails = (id) => {
+  const showDetails = (id) => {
     getSupplierById(id);
     setIsDatails(true);
   };
@@ -114,6 +109,7 @@ export default function Supplier() {
     </>
   );
 
+  // Função que renderiza uma lista de fornecedores vazia
   const renderEmptySupplier = () => (
     <Content>
       <TitleRegistration>Cadastre seu primeiro fornecedor</TitleRegistration>
@@ -125,6 +121,7 @@ export default function Supplier() {
     </Content>
   );
 
+  // Função que renderiza uma lista de fornecedores
   const renderListSupplier = () => (
     <>
       <Separator48 />
@@ -135,7 +132,7 @@ export default function Supplier() {
           data={suppliersFilter}
           renderItem={({ item }) => (
             <>
-              <ContainerInformation onPress={() => showDatails(item.id)}>
+              <ContainerInformation onPress={() => showDetails(item.id)}>
                 <NameSupplier>{item.name}</NameSupplier>
                 <Separator8 />
                 <LiningUp>
@@ -155,7 +152,10 @@ export default function Supplier() {
           )}
         />
       </Main>
-      <ButtonAdd activeOpacity={0.6} onPress={() => navigation.navigate('Step1')}>
+      <ButtonAdd
+        activeOpacity={0.6}
+        onPress={() => navigation.navigate("Step1")}
+      >
         <Add />
       </ButtonAdd>
     </>

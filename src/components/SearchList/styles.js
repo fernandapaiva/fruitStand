@@ -1,8 +1,8 @@
-import styled from 'styled-components/native';
-import { colors } from '../../assets/colors/styles';
-import {Dimensions} from 'react-native';
+import styled from "styled-components/native";
+import { colors } from "../../assets/colors/styles";
+import { Dimensions } from "react-native";
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 export const SearchContainer = styled.View`
   width: ${width - 40}px;
@@ -20,8 +20,8 @@ export const SearchText = styled.TextInput`
   padding: 5px;
   width: 90%;
   font-size: 14px;
-  color: #363A3C;
-  font-family: 'Poppins-Regular';
+  color: #363a3c;
+  font-family: "Poppins-Regular";
   align-items: center;
   justify-content: center;
   margin-left: 5px;
