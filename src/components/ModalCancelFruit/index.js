@@ -11,6 +11,7 @@ import {
   ButtonRed,
   TitleAlerWhite,
   TitleAlertRed,
+  Separator5,
 } from "./styles";
 
 export default function ModalCancelFruit({ visible, setVisible, onPress }) {
@@ -24,7 +25,7 @@ export default function ModalCancelFruit({ visible, setVisible, onPress }) {
       <Container>
         <ContainerInside>
           <TitleAlert>Excluir Fruta</TitleAlert>
-          <Separator16 />
+          <Separator5 />
           <Description>
             Tem certeza que quer excluir essa {"\n"}fruta?
             {"\n"}

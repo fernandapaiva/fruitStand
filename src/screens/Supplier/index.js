@@ -59,7 +59,6 @@ export default function Supplier() {
     getSuppliers,
     getSupplierById,
     supplierId,
-    RegisterSupplier,
     isLoading,
   } = useContext(HooksContext);
 
@@ -105,10 +104,10 @@ export default function Supplier() {
         <TextAbove>Frutas</TextAbove>
       </>
       <FlatList
-        data={supplierId.Fruits}
+        data={supplierId.fruits}
         renderItem={({ item }) => (
           <SubContainer>
-            <NameFruit> • {item.name}</NameFruit>
+            <NameFruit> • {item.fruta}</NameFruit>
           </SubContainer>
         )}
       />
@@ -156,7 +155,7 @@ export default function Supplier() {
           )}
         />
       </Main>
-      <ButtonAdd activeOpacity={0.6}>
+      <ButtonAdd activeOpacity={0.6} onPress={() => navigation.navigate('Step1')}>
         <Add />
       </ButtonAdd>
     </>

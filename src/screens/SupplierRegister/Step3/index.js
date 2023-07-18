@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 // libs
 import { useNavigation } from "@react-navigation/native";
@@ -25,29 +25,44 @@ import Right from "../../../assets/images/Right";
 
 // components
 import Button from "../../../components/Button";
+import ModalCancelRegister from "../../../components/ModalCancelRegister";
 
 // validators
 import { phoneMask } from "../../../utils/inputMask";
 import { isValidPhone } from "../../../utils/validators";
 
-export default function Step3() {
-  const [phone, setPhone] = useState("");
-  const [errorPhone, setErrorPhone] = useState(false);
-
-  const onPress = () => {
-    const isValid = isValidPhone(phone)
-    setErrorPhone(!isValid)
-    if(isValid) {
-      navigation.navigate("Step4");
-    }
-  }
+export default function Step3({ route }) {
+  const params = route?.params;
 
   const navigation = useNavigation();
 
+  const [phone, setPhone] = useState("");
+  const [errorPhone, setErrorPhone] = useState(false);
+
+  const [visible, setVisible] = useState(false);
+
+  const onPress = () => {
+    const isValid = isValidPhone(phone);
+    setErrorPhone(!isValid);
+    if (isValid) {
+      navigation.navigate("Step4", { ...params, phone });
+    }
+  };
+
+  const onPressModal = () => {
+    setVisible(false);
+    navigation.navigate("Supplier");
+  };
+
   return (
     <Container>
+      <ModalCancelRegister
+        visible={visible}
+        setVisible={setVisible}
+        onPress={onPressModal}
+      />
       <Separator24 />
-      <CloseButton onPress={() => navigation.navigate("Supplier")}>
+      <CloseButton onPress={() => setVisible(true)}>
         <CloseRed />
       </CloseButton>
       <Separator24 />

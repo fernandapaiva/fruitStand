@@ -9,7 +9,7 @@ export const Container = styled.View`
   justify-content: center;
   align-items: center;
   background-color: ${colors.Black};
-  opacity: 0.9;
+  opacity: 0.95;
 `;
 
 export const ContainerInside = styled.View`
@@ -22,6 +22,10 @@ export const ContainerInside = styled.View`
 
 export const Separator16 = styled.View`
   height: 16px;
+`;
+
+export const Separator5 = styled.View`
+  height: 5px;
 `;
 
 export const TitleAlert = styled.Text`
