@@ -14,27 +14,25 @@ import {
   TitleAlertRed,
 } from "./styles";
 
-export default function ModalCancelRegister() {
+export default function ModalCancelRegister({visible, setVisible, onPress}) {
   return (
-    <Modal animationType="fade" transparent>
+    <Modal animationType="fade" transparent visible={visible} onRequestClose={() => setVisible(false)}>
       <Container>
         <ContainerInside>
-            <ContainerSeparator>
-          <TitleAlert>Cancelar Cadastro</TitleAlert>
-          <Separator16 />
-          <Description>
-            Tem certeza que quer cancelar o 
-            cadastro do colaborador? 
-            Você perderá todas as informações 
-            inseridas até aqui
-          </Description>
+          <ContainerSeparator>
+            <TitleAlert>Cancelar Cadastro</TitleAlert>
+            <Separator16 />
+            <Description>
+              Tem certeza que quer cancelar o cadastro do colaborador? Você
+              perderá todas as informações inseridas até aqui
+            </Description>
           </ContainerSeparator>
           <AlertButtons>
             <Button>
-                <TitleAlertRed>Não</TitleAlertRed>
+              <TitleAlertRed>Não</TitleAlertRed>
             </Button>
             <ButtonRed>
-                <TitleAlerWhite>Sim, cancelar</TitleAlerWhite>
+              <TitleAlerWhite>Sim, cancelar</TitleAlerWhite>
             </ButtonRed>
           </AlertButtons>
         </ContainerInside>

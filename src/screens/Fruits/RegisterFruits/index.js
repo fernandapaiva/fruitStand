@@ -30,8 +30,7 @@ import RedButton from "../../../components/RedButton";
 // hoocks
 import { HooksContext } from "../../../hooks";
 
-
-export default function RegisterFruits({onCloseRegister, isEdit}) {
+export default function RegisterFruits({ onCloseRegister, isEdit }) {
   const navigation = useNavigation();
 
   const [nameFruit, setNameFruit] = useState("");
@@ -40,59 +39,53 @@ export default function RegisterFruits({onCloseRegister, isEdit}) {
   const [errorFruit, setErrorFruit] = useState(false);
   const [errorPrice, setErrorPrice] = useState(false);
   const [errorStock, setErrorStock] = useState(false);
-  const [selectedSupplier, setSelectedSupplier] = useState('');
+  const [selectedSupplier, setSelectedSupplier] = useState("");
   const [errorSelectedSupplier, setErrorSelectedSupplier] = useState(false);
 
-  const {
-    RegisterFruit,
-    suppliers,
-    isLoading,
-    updateFruit,
-    fruitId,
-  } = useContext(HooksContext);
+  const { RegisterFruit, suppliers, isLoading, updateFruit, fruitId } =
+    useContext(HooksContext);
 
   useEffect(() => {
-    if(isEdit) {
-      setNameFruit(fruitId.name)
-      setPrice(fruitId.price)
-      setStock(fruitId.stock)
-      setSelectedSupplier(fruitId.supplier)
+    if (isEdit) {
+      setNameFruit(fruitId.name);
+      setPrice(fruitId.price);
+      setStock(fruitId.stock);
+      setSelectedSupplier(fruitId.supplier);
     }
-  }, [fruitId])
+  }, [fruitId]);
 
   const onRegisterSucess = (fruit) => {
-    onCloseRegister()
-    navigation.navigate('ResgistrationSuccess', {fruit})
-  }
-
+    onCloseRegister();
+    navigation.navigate("ResgistrationSuccess", { fruit });
+  };
 
   const onPressRegister = () => {
     setErrorFruit(!nameFruit);
     setErrorPrice(!price);
     setErrorStock(!stock);
-    setErrorSelectedSupplier(!selectedSupplier)
+    setErrorSelectedSupplier(!selectedSupplier);
     if (price && stock && selectedSupplier) {
       const data = {
         name: nameFruit,
         price: price,
         stock: stock,
         supplier: selectedSupplier,
-      }
+      };
       RegisterFruit(data);
-      !isLoading && onRegisterSucess()
+      !isLoading && onRegisterSucess();
     }
   };
 
   const onPressEdit = () => {
     setErrorPrice(!price);
     setErrorStock(!stock);
-    setErrorSelectedSupplier(!selectedSupplier)
+    setErrorSelectedSupplier(!selectedSupplier);
     if (nameFruit && price && stock && selectedSupplier) {
       const data = {
         price: price,
         stock: stock,
         supplier: selectedSupplier,
-      }
+      };
       updateFruit(data, fruitId.id);
       !isLoading && onCloseRegister();
     }
@@ -101,7 +94,7 @@ export default function RegisterFruits({onCloseRegister, isEdit}) {
   return (
     <>
       <FirstView>
-        <PageTitle>{isEdit ? 'Editar Fruta' : 'Cadastrar Fruta'}</PageTitle>
+        <PageTitle>{isEdit ? "Editar Fruta" : "Cadastrar Fruta"}</PageTitle>
         <CloseButton onPress={() => onCloseRegister()}>
           <Close />
         </CloseButton>
@@ -161,33 +154,44 @@ export default function RegisterFruits({onCloseRegister, isEdit}) {
       {errorStock && <ErrorMensage>Campo obrigatório*</ErrorMensage>}
       <Separator16 />
       <ViewInput>
-      <ContentImage>
+        <ContentImage>
           <PeopleDark error={errorSelectedSupplier} />
         </ContentImage>
-      <Picker
-        key={(suppliers.map((item) => item.id.toString() || ''))}
-        selectedValue={selectedSupplier}
-        onValueChange={(itemValue) => {
-          setErrorSelectedSupplier(!itemValue);
-          setSelectedSupplier(itemValue);
-        }}
-        style={{
-          flex: 1,
-          color: errorSelectedSupplier ? "#930000" : "#6C7072",
-          marginLeft: -12,
-          fontFamily: 'Poppins-Regular'
-        }}
-      >
-        <Picker.Item  label='Fornecedor' value='' style={{fontSize: 15, fontFamily: 'Poppins-Regular'}} />
-        {suppliers.map((item) => (
-          <Picker.Item  label={item?.name} value={item?.name} style={{fontSize: 15, fontFamily: 'Poppins-Regular'}} />
-        ))}
-      </Picker>
+        <Picker
+          selectedValue={selectedSupplier}
+          onValueChange={(itemValue) => {
+            setErrorSelectedSupplier(!itemValue);
+            setSelectedSupplier(itemValue);
+          }}
+          style={{
+            flex: 1,
+            color: errorSelectedSupplier ? "#930000" : "#6C7072",
+            marginLeft: -12,
+            fontFamily: "Poppins-Regular",
+          }}
+        >
+          <Picker.Item
+            key=""
+            label="Fornecedor"
+            value=""
+            style={{ fontSize: 15, fontFamily: "Poppins-Regular" }}
+          />
+          {suppliers.map((item) => (
+            <Picker.Item
+              key={suppliers.map((item) => item.id.toString())}
+              label={item?.name}
+              value={item?.name}
+              style={{ fontSize: 15, fontFamily: "Poppins-Regular" }}
+            />
+          ))}
+        </Picker>
       </ViewInput>
       {errorSelectedSupplier && <ErrorMensage>Campo obrigatório*</ErrorMensage>}
       <ViewButton>
         <RedButton
-          onPress={() => {isEdit ? onPressEdit() : onPressRegister()}}
+          onPress={() => {
+            isEdit ? onPressEdit() : onPressRegister();
+          }}
           title={isEdit ? "Atualizar fruta" : "Cadastrar Fruta"}
           Icon={false}
         />

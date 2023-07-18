@@ -1,15 +1,15 @@
-import styled from 'styled-components/native';
-import { colors } from '../../assets/colors/styles';
-import {Dimensions} from 'react-native';
+import styled from "styled-components/native";
+import { colors } from "../../assets/colors/styles";
+import { Dimensions } from "react-native";
 
-const {width} = Dimensions.get('window')
+const { width } = Dimensions.get("window");
 
 export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: ${colors.Backgroud};
-  opacity: 0.90;
+  background-color: ${colors.Black};
+  opacity: 0.9;
 `;
 
 export const ContainerInside = styled.View`
@@ -17,36 +17,36 @@ export const ContainerInside = styled.View`
   width: ${width - 50}px;
   height: 240px;
   border-radius: 8px;
-`;
-
-export const ContainerSeparator = styled.View`
-    padding: 18px;
+  padding: 20px;
 `;
 
 export const Separator16 = styled.View`
-  height: 5px;
+  height: 16px;
 `;
 
 export const TitleAlert = styled.Text`
   font-size: 24px;
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
   color: ${colors.Red};
 `;
 
 export const Description = styled.Text`
   font-size: 15px;
-  font-family: 'Poppins-Regular';
+  font-family: "Poppins-Regular";
   color: ${colors.DarkGray};
+  line-height: 24px;
+  text-align: justify;
 `;
 
 export const AlertButtons = styled.View`
   flex-direction: row;
+  width: 100%;
   justify-content: space-evenly;
 `;
 
 export const Button = styled.TouchableOpacity`
   width: 132px;
-  height:40px;
+  height: 40px;
   background-color: ${colors.White};
   border-width: 1px;
   border-color: ${colors.Red};
@@ -57,7 +57,7 @@ export const Button = styled.TouchableOpacity`
 
 export const ButtonRed = styled.TouchableOpacity`
   width: 132px;
-  height:40px;
+  height: 40px;
   background-color: ${colors.Red};
   border-radius: 100px;
   justify-content: center;
@@ -66,12 +66,12 @@ export const ButtonRed = styled.TouchableOpacity`
 
 export const TitleAlertRed = styled.Text`
   font-size: 13px;
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
   color: ${colors.Red};
 `;
 
 export const TitleAlerWhite = styled.Text`
   font-size: 13px;
-  font-family: 'Poppins-Medium';
+  font-family: "Poppins-Medium";
   color: ${colors.White};
 `;

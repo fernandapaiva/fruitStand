@@ -28,7 +28,6 @@ import {
 } from "./styles";
 
 // icons
-import Search from "../../assets/images/Search";
 import PeopleSmall from "../../assets/images/PeopleSmall";
 import Cash from "../../assets/images/Cash";
 import RightContent from "../../assets/images/RightContent";

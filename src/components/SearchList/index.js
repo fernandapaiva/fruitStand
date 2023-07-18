@@ -4,6 +4,7 @@ import { SearchContainer, SearchText } from "./styles";
 import Search from "../../assets/images/Search";
 
 import { HooksContext } from "../../hooks";
+import { colors } from "../../assets/colors/styles";
 
 const SearchList = ({ isFruit = false, setData }) => {
   const { suppliers, fruits } = useContext(HooksContext);
@@ -23,6 +24,7 @@ const SearchList = ({ isFruit = false, setData }) => {
         <Search />
         <SearchText
           placeholder="Pesquisar Fornecedor"
+          placeholderTextColor={colors.DarkGray}
           onChangeText={(text) => {
             handlerSearch(text);
           }}

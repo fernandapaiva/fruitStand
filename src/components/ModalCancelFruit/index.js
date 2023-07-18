@@ -3,7 +3,6 @@ import { Modal } from "react-native";
 import {
   Container,
   ContainerInside,
-  ContainerSeparator,
   TitleAlert,
   Description,
   Separator16,
@@ -14,24 +13,24 @@ import {
   TitleAlertRed,
 } from "./styles";
 
-export default function ModalCancelFruit(visible, setVisible, onPress) {
+export default function ModalCancelFruit({ visible, setVisible, onPress }) {
   return (
-    <Modal 
-    animationType="fade" 
-    transparent
-    visible={visible}
-    onRequestClose={() => setVisible(false)}
+    <Modal
+      animationType="fade"
+      transparent
+      visible={visible}
+      onRequestClose={() => setVisible(false)}
     >
       <Container>
         <ContainerInside>
-          <ContainerSeparator>
-            <TitleAlert>Cancelar Cadastro</TitleAlert>
-            <Separator16 />
-            <Description>
-              Tem certeza que quer excluir essa fruta? Você perderá todas as
-              informação cadastradas sobre ela.
-            </Description>
-          </ContainerSeparator>
+          <TitleAlert>Excluir Fruta</TitleAlert>
+          <Separator16 />
+          <Description>
+            Tem certeza que quer excluir essa {"\n"}fruta?
+            {"\n"}
+            Você perderá todas as informação cadastradas sobre ela.
+          </Description>
+          <Separator16 />
           <AlertButtons>
             <Button onPress={() => setVisible(false)}>
               <TitleAlertRed>Não</TitleAlertRed>
