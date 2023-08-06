@@ -32,6 +32,7 @@ import {
   ButtonAdd,
   Separator8,
   Separator48,
+  ViewButton,
 } from "./styles";
 
 // icons
@@ -44,6 +45,7 @@ import Add from "../../assets/images/Add";
 import RedButton from "../../components/RedButton";
 import LoadingView from "../../components/Loading";
 import SearchList from "../../components/SearchList";
+import ModalCancelSupplier from "../../components/ModalCancelSupplier";
 
 // hooks
 import { HooksContext } from "../../hooks";
@@ -53,8 +55,9 @@ export default function Supplier() {
 
   const [suppliersFilter, setSupplierFilter] = useState([]);
   const [isDetails, setIsDatails] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-  const { suppliers, getSuppliers, getSupplierById, supplierId, isLoading } =
+  const { suppliers, getSuppliers, getSupplierById, supplierId, isLoading, removeSupplier } =
     useContext(HooksContext);
 
   useEffect(() => {
@@ -69,6 +72,12 @@ export default function Supplier() {
     getSupplierById(id);
     setIsDatails(true);
   };
+
+  const onPressDeleteSupplier = () => {
+    removeSupplier(supplierId.id)
+    setIsDatails(false);
+    setVisible(false);
+  }
 
   const renderSupplierDetails = () => (
     <>
@@ -106,6 +115,15 @@ export default function Supplier() {
           </SubContainer>
         )}
       />
+      <ViewButton>
+      <RedButton
+        onPress={() => {
+          setVisible(true);
+        }}
+        title="Excluir Fornecedor"
+        Icon={false}
+      />
+      </ViewButton>
     </>
   );
 
@@ -167,6 +185,11 @@ export default function Supplier() {
       behavior="height"
       keyboardVerticalOffset={-50}
     >
+      <ModalCancelSupplier 
+      visible={visible}
+      setVisible={setVisible}
+      onPress={() => onPressDeleteSupplier()}
+      />
       {isLoading && <LoadingView />}
       <Container>
         {isDetails && renderSupplierDetails()}

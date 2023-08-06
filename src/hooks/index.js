@@ -99,6 +99,18 @@ const HooksProvider = ({ children }) => {
       .finally(() => setIsLoading(false));
   }
 
+  // Essa função remove um fornecedor
+  function removeSupplier(id) {
+    setIsLoading(true);
+    api
+      .delete(`/Supplier/${id}`)
+      .then((resp) => {
+        if (resp.data) getSuppliers();
+      })
+      .catch((error) => error)
+      .finally(() => setIsLoading(false));
+  }
+
   return (
     <HooksContext.Provider
       value={{
@@ -115,6 +127,7 @@ const HooksProvider = ({ children }) => {
         supplierId,
         fruitId,
         removeFruit,
+        removeSupplier,
       }}
     >
       {children}

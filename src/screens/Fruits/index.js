@@ -1,9 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { FlatList, KeyboardAvoidingView } from "react-native";
 
-// libs
-import { useNavigation } from "@react-navigation/native";
-
 // styles
 import {
   Container,
@@ -47,7 +44,6 @@ import { HooksContext } from "../../hooks";
 import RegisterFruits from "./RegisterFruits";
 
 export default function Fruits() {
-  const navigation = useNavigation();
 
   const [fruitsFilter, setfruitsFilter] = useState([]);
   const [isEdit, setIsEdit] = useState(false);

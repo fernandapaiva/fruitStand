@@ -23,6 +23,12 @@ export const Separator40 = styled.View`
   height: 40px;
 `;
 
+export const ViewButton = styled.View`
+  width: 100%;
+  margin-bottom: 20px;
+  left: 12px;
+`;
+
 ////////////////////////////////////
 
 export const Container = styled.View`
